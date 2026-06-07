@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AltiMentum Global — Rise With Momentum</title>
-<meta name="description" content="One institution. Many missions. AltiMentum Global is the house of Services Building & Providing — Coaching, Security, Logistics, Emergencies, Peace, Travel and Human Transformation — built to serve the World.">
+<meta name="description" content="One institution. Many missions. AltiMentum Global — built to serve the World.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -21,15 +21,24 @@ html{scroll-behavior:smooth;}
 body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;overflow-x:hidden;}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,13,20,0.97);border-bottom:1px solid var(--border);backdrop-filter:blur(8px);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,13,20,0.97);border-bottom:1px solid var(--border);backdrop-filter:blur(8px);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;}
 .nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--text);letter-spacing:2px;}
 .nav-logo-sub{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-top:1px;}
 .nav-links{display:flex;align-items:center;}
-.nav-link{background:none;border:none;color:var(--muted);font-family:'Barlow',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:0 0.85rem;height:64px;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;}
+.nav-link{background:none;border:none;color:var(--muted);font-family:'Barlow',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:0 0.75rem;height:64px;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;}
 .nav-link:hover,.nav-link.active{color:var(--gold-lt);border-bottom-color:var(--gold);}
-.nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Barlow',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:9px 16px;cursor:pointer;margin-left:0.75rem;transition:all 0.2s;}
+.nav-right{display:flex;align-items:center;gap:0.5rem;}
+.nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Barlow',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:8px 14px;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
 .nav-cta:hover{background:var(--gold);color:var(--deep);}
+
+/* LANGUAGE TOGGLE */
+.lang-toggle{display:flex;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+.lang-btn{background:none;border:none;color:var(--muted);font-family:'Barlow',sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;padding:6px 10px;cursor:pointer;transition:all 0.2s;}
+.lang-btn.active{background:var(--gold);color:var(--deep);}
+.lang-btn:not(.active):hover{color:var(--gold-lt);}
+.lang-sep{width:1px;background:var(--border);height:24px;}
+
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--gold);}
 
@@ -37,17 +46,22 @@ body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;ov
 .page{display:none;padding-top:64px;}
 .page.active{display:block;}
 
-/* PHOTO BANNER — used under every page title */
-.photo-banner{width:100%;height:420px;object-fit:cover;display:block;filter:brightness(0.75);}
-.photo-banner-wrap{position:relative;overflow:hidden;height:420px;}
-.photo-banner-wrap img{width:100%;height:100%;object-fit:cover;filter:brightness(0.7);}
-.photo-banner-overlay{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(10,13,20,0.3) 0%, rgba(10,13,20,0.6) 100%);}
+/* LANGUAGE CONTENT — hide/show */
+.en,.fr{display:none;}
+body.lang-en .en{display:block;}
+body.lang-en span.en{display:inline;}
+body.lang-fr .fr{display:block;}
+body.lang-fr span.fr{display:inline;}
+body.lang-en .fr{display:none;}
+body.lang-fr .en{display:none;}
+/* for inline spans */
+span.en,span.fr{display:none;}
 
 /* HERO */
 .hero{min-height:calc(100vh - 64px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;z-index:0;}
 .hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.35);}
-.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(10,13,20,0.4) 0%, rgba(10,13,20,0.7) 100%);}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,13,20,0.4),rgba(10,13,20,0.7));}
 .hero-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;}
 .hero-logo{margin-bottom:2rem;}
 .hero-logo svg{width:90px;height:auto;display:block;margin:0 auto;}
@@ -80,12 +94,11 @@ body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;ov
 .sec-body{font-size:13px;font-weight:300;color:var(--muted);line-height:1.9;}
 .gold-rule{width:70px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin:1.2rem 0 2rem;}
 
-/* PHOTO IN SECTION — side by side */
+/* SPLIT ROW */
 .split-row{display:flex;gap:3rem;align-items:center;flex-wrap:wrap;}
 .split-text{flex:1;min-width:260px;}
 .split-photo{flex:1;min-width:260px;}
-.split-photo img{width:100%;height:320px;object-fit:cover;display:block;filter:brightness(0.85);}
-.split-photo.tall img{height:420px;}
+.split-photo img{width:100%;height:380px;object-fit:cover;filter:brightness(0.85);display:block;}
 
 /* ABOUT VALS */
 .about-vals{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
@@ -93,7 +106,7 @@ body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;ov
 .val-title{font-size:11px;font-weight:600;color:var(--text);letter-spacing:1px;text-transform:uppercase;}
 .val-desc{font-size:11px;color:var(--muted2);margin-top:4px;line-height:1.5;}
 
-/* VENTURES GRID */
+/* VENTURES */
 .ventures-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border2);margin-top:3rem;}
 .vc{background:var(--surface);cursor:pointer;transition:background 0.2s;position:relative;overflow:hidden;}
 .vc-photo{width:100%;height:180px;object-fit:cover;display:block;filter:brightness(0.7);transition:filter 0.3s;}
@@ -104,11 +117,11 @@ body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;ov
 .vc-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border:1px solid var(--border);padding:3px 8px;display:inline-block;margin-bottom:0.75rem;}
 .vc-tag.inv-tag{background:rgba(139,26,26,0.15);border-color:rgba(139,26,26,0.4);color:#E8A0A0;}
 .vc-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--text);margin-bottom:0.5rem;line-height:1.3;}
-.vc-desc{font-size:12px;color:var(--muted);line-height:1.7;font-weight:300;}
+.vc-desc{font-size:12px;color:var(--muted);line-height:1.7;}
 .vc-link{margin-top:0.75rem;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
 
 /* FOUNDER */
-.founder-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.founder-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden;min-height:400px;}
 .founder-bg{position:absolute;inset:0;}
 .founder-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.25);}
 .founder-bg-overlay{position:absolute;inset:0;background:rgba(10,13,20,0.6);}
@@ -120,38 +133,34 @@ body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;ov
 .founder-name{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-lt);}
 .founder-title{font-size:10px;color:var(--muted2);letter-spacing:1px;margin-top:4px;}
 
-/* PILLARS — with photos */
+/* PILLARS */
 .pillars-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border2);margin-top:2rem;}
-.pillar{background:var(--surface);transition:background 0.2s;overflow:hidden;cursor:default;}
+.pillar{background:var(--surface);transition:background 0.2s;overflow:hidden;}
 .pillar:hover{background:var(--surface2);}
 .pillar img{width:100%;height:120px;object-fit:cover;filter:brightness(0.6);display:block;}
 .pillar-content{padding:1rem;}
 .pillar-icon{font-size:18px;margin-bottom:0.5rem;}
 .pillar-name{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
 
-/* VENTURE DETAIL PAGES */
+/* VENTURE DETAIL */
 .vd-hero{padding-top:0;background:var(--deep);border-bottom:1px solid var(--border);}
-.vd-hero-photo{width:100%;height:420px;object-fit:cover;display:block;filter:brightness(0.5);}
+.vd-back-top{padding:1.5rem 2rem;text-align:center;}
+.vd-back{background:none;border:1px solid var(--border);color:var(--muted);font-family:'Barlow',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;cursor:pointer;transition:all 0.2s;}
+.vd-back:hover{color:var(--gold-lt);border-color:var(--gold);}
 .vd-hero-photo-wrap{position:relative;height:420px;overflow:hidden;}
 .vd-hero-photo-wrap img{width:100%;height:100%;object-fit:cover;filter:brightness(0.45);}
-.vd-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,13,20,0.2),rgba(10,13,20,0.7));}
+.vd-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,13,20,0.2),rgba(10,13,20,0.75));}
 .vd-hero-text{position:absolute;bottom:0;left:0;right:0;padding:3rem 2rem;text-align:center;}
-.vd-back{background:none;border:1px solid var(--border);color:var(--muted);font-family:'Barlow',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;cursor:pointer;margin-bottom:1.5rem;transition:all 0.2s;display:inline-block;}
-.vd-back:hover{color:var(--gold-lt);border-color:var(--gold);}
 .vd-badge{display:inline-block;background:var(--gold-pale);border:1px solid var(--border);color:var(--gold-lt);font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;margin-bottom:1rem;}
 .vd-badge.inv-badge{background:rgba(139,26,26,0.15);border-color:rgba(139,26,26,0.4);color:#E8A0A0;}
 .vd-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,52px);font-weight:700;color:var(--text);margin-bottom:0.75rem;}
 .vd-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:17px;color:rgba(240,237,230,0.75);}
-.vd-back-top{padding:1.5rem 2rem;text-align:center;}
 .vd-body{max-width:960px;margin:0 auto;padding:4rem 2rem;background:var(--mid);}
 .vd-section{margin-bottom:3.5rem;}
 .vd-sh{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);margin-bottom:1rem;border-left:3px solid var(--gold);padding-left:1rem;}
 .vd-p{font-size:13px;color:var(--muted);line-height:1.9;font-weight:300;}
-
-/* SECTION PHOTO — full width inside page body */
 .section-photo-wrap{width:100%;margin:2rem 0;overflow:hidden;}
 .section-photo-wrap img{width:100%;height:320px;object-fit:cover;filter:brightness(0.75);display:block;}
-
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border2);margin-top:1.5rem;}
 .srv{background:var(--surface);padding:1.25rem;border-top:2px solid transparent;transition:border-color 0.2s;}
 .srv:hover{border-top-color:var(--gold);}
@@ -210,13 +219,16 @@ body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;ov
 .adv-item{background:var(--surface);padding:1.75rem 2rem;display:flex;gap:1rem;align-items:flex-start;transition:background 0.2s;}
 .adv-item:hover{background:var(--surface2);}
 .adv-num{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--border);line-height:1;flex-shrink:0;}
-.adv-title{font-size:13px;font-weight:600;color:var(--gold-lt);letter-spacing:0.5px;margin-bottom:0.4rem;}
+.adv-title{font-size:13px;font-weight:600;color:var(--gold-lt);margin-bottom:0.4rem;}
 .adv-desc{font-size:11.5px;color:var(--muted);line-height:1.7;}
 .conf-note{padding:1rem 1.5rem;background:var(--gold-pale);border:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;text-align:left;max-width:700px;margin:2rem auto 0;}
 .conf-text{font-size:11px;color:var(--muted);line-height:1.7;}
 .conf-text strong{color:var(--gold-lt);}
 
 /* CONTACT */
+.photo-banner-wrap{position:relative;height:360px;overflow:hidden;}
+.photo-banner-wrap img{width:100%;height:100%;object-fit:cover;filter:brightness(0.4);}
+.photo-banner-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,13,20,0.3),rgba(10,13,20,0.7));}
 .contact-section{background:var(--deep);padding:5rem 2rem;text-align:center;}
 .contact-inner{max-width:700px;margin:0 auto;}
 .contact-form{background:var(--surface);border:1px solid var(--border);padding:2.5rem;margin-top:2rem;text-align:left;}
@@ -228,7 +240,6 @@ body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;ov
 .form-group textarea{resize:vertical;min-height:100px;}
 .form-group select option{background:var(--surface2);}
 .form-submit{width:100%;background:var(--gold);color:var(--deep);font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:14px;border:none;cursor:pointer;margin-top:1rem;}
-.form-submit:hover{opacity:0.9;}
 .contact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--border2);margin-top:2rem;}
 .cc{background:var(--surface);padding:1.25rem;text-align:center;}
 .cc-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
@@ -256,12 +267,12 @@ body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;ov
   .hamburger{display:flex;}
   .form-row{grid-template-columns:1fr;}
   .split-row{flex-direction:column;}
-  .photo-banner-wrap{height:280px;}
   .vd-hero-photo-wrap{height:300px;}
+  .photo-banner-wrap{height:240px;}
 }
 </style>
 </head>
-<body>
+<body class="lang-en">
 
 <!-- NAV -->
 <nav class="nav">
@@ -272,27 +283,48 @@ body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;ov
     </div>
   </div>
   <div class="nav-links" id="navLinks">
-    <button class="nav-link active" id="nav-home" onclick="showPage('home')">Home</button>
-    <button class="nav-link" id="nav-coaching" onclick="showPage('coaching')">Coaching</button>
-    <button class="nav-link" id="nav-srm" onclick="showPage('srm')">SRM Security</button>
-    <button class="nav-link" id="nav-ngo" onclick="showPage('ngo')">PSB NGO</button>
-    <button class="nav-link" id="nav-travel" onclick="showPage('travel')">Life Travels</button>
-    <button class="nav-link" id="nav-investigations" onclick="showPage('investigations')">Investigations</button>
-    <button class="nav-link" id="nav-contact" onclick="showPage('contact')">Contact</button>
+    <button class="nav-link active" id="nav-home" onclick="showPage('home')">
+      <span class="en">Home</span><span class="fr">Accueil</span>
+    </button>
+    <button class="nav-link" id="nav-coaching" onclick="showPage('coaching')">
+      <span class="en">Coaching</span><span class="fr">Coaching</span>
+    </button>
+    <button class="nav-link" id="nav-srm" onclick="showPage('srm')">
+      <span class="en">SRM Security</span><span class="fr">SRM Sécurité</span>
+    </button>
+    <button class="nav-link" id="nav-ngo" onclick="showPage('ngo')">
+      <span class="en">PSB NGO</span><span class="fr">PSB ONG</span>
+    </button>
+    <button class="nav-link" id="nav-travel" onclick="showPage('travel')">
+      <span class="en">Life Travels</span><span class="fr">Life Travels</span>
+    </button>
+    <button class="nav-link" id="nav-investigations" onclick="showPage('investigations')">
+      <span class="en">Investigations</span><span class="fr">Investigations</span>
+    </button>
+    <button class="nav-link" id="nav-bha" onclick="showPage('bha')"><span class="en">BHA</span><span class="fr">BHA</span></button>
+    <button class="nav-link" id="nav-contact" onclick="showPage('contact')">
+      <span class="en">Contact</span><span class="fr">Contact</span>
+    </button>
   </div>
-  <button class="nav-cta" onclick="showPage('contact')">Connect ↗</button>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <div class="lang-sep"></div>
+      <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
+    </div>
+    <button class="nav-cta" onclick="showPage('contact')">
+      <span class="en">Connect ↗</span><span class="fr">Contactez ↗</span>
+    </button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- ════ HOME PAGE ════ -->
 <div class="page active" id="page-home">
-
-  <!-- HERO with full background photo -->
   <section class="hero">
     <div class="hero-bg">
-      <!-- REPLACE: Hero background — African Great Lakes aerial panorama -->
       <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1920&q=80" alt="African landscape">
       <div class="hero-bg-overlay"></div>
     </div>
@@ -308,175 +340,225 @@ body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;ov
       <div class="hero-global">G &nbsp; L &nbsp; O &nbsp; B &nbsp; A &nbsp; L</div>
       <div class="hero-divider"></div>
       <div class="hero-tagline-small">Rise With Momentum</div>
-      <p class="hero-body">One institution. Many missions. AltiMentum Global is the house of Services Building &amp; Providing — Coaching, Security, Logistics, Emergencies, Peace, Travel and Human Transformation — built to serve the World.</p>
+      <p class="hero-body">
+        <span class="en">One institution. Many missions. AltiMentum Global is the house of Services Building &amp; Providing — Coaching, Security, Logistics, Emergencies, Peace, Travel and Human Transformation — built to serve the World.</span>
+        <span class="fr">Une institution. Plusieurs missions. AltiMentum Global est la maison des Services — Coaching, Sécurité, Logistique, Urgences, Paix, Voyage et Transformation Humaine — construite pour servir le Monde.</span>
+      </p>
       <div class="hero-btns">
-        <button class="btn-gold" onclick="showPage('coaching')">Explore Our Ventures</button>
-        <button class="btn-ghost" onclick="showPage('contact')">Partner With Us</button>
+        <button class="btn-gold" onclick="showPage('coaching')">
+          <span class="en">Explore Our Ventures</span><span class="fr">Explorer Nos Divisions</span>
+        </button>
+        <button class="btn-ghost" onclick="showPage('contact')">
+          <span class="en">Partner With Us</span><span class="fr">Devenir Partenaire</span>
+        </button>
       </div>
-      <div class="hero-badge"><div class="badge-dot"></div>Rooted in Africa · Reaching the World</div>
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        <span class="en">Rooted in Africa · Reaching the World</span>
+        <span class="fr">Enraciné en Afrique · Rayonnant sur le Monde</span>
+      </div>
     </div>
   </section>
 
   <div class="stats-bar">
-    <div class="stat"><div class="stat-n">6</div><div class="stat-l">Core Divisions</div></div>
-    <div class="stat"><div class="stat-n">54</div><div class="stat-l">African Countries</div></div>
-    <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Years Screened</div></div>
-    <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Impact</div></div>
+    <div class="stat"><div class="stat-n">7</div><div class="stat-l"><span class="en">Core Divisions</span><span class="fr">Divisions</span></div></div>
+    <div class="stat"><div class="stat-n">54</div><div class="stat-l"><span class="en">African Countries</span><span class="fr">Pays Africains</span></div></div>
+    <div class="stat"><div class="stat-n">10+</div><div class="stat-l"><span class="en">Years Screened</span><span class="fr">Ans d'Enquête</span></div></div>
+    <div class="stat"><div class="stat-n">∞</div><div class="stat-l"><span class="en">Impact</span><span class="fr">Impact</span></div></div>
   </div>
 
-  <!-- ABOUT — photo beside text -->
+  <!-- ABOUT -->
   <div class="section">
     <div class="split-row">
       <div class="split-text">
-        <div class="sec-eye">Who We Are</div>
-        <h2 class="sec-h">The House of All Visions</h2>
+        <div class="sec-eye"><span class="en">Who We Are</span><span class="fr">Qui Nous Sommes</span></div>
+        <h2 class="sec-h">
+          <span class="en">The House of All Visions</span>
+          <span class="fr">La Maison de Toutes les Visions</span>
+        </h2>
         <div class="gold-rule"></div>
-        <p class="sec-body">AltiMentum Global LLC is the mother institution — the umbrella under which every dream, every venture, and every mission lives. Founded by Daniel Mwendanga and registered in the Commonwealth of Virginia, it is a life's architecture: coaching minds, securing nations, investigating the truth, building peace, enabling travel, and investing in communities the world has overlooked.</p>
+        <p class="sec-body">
+          <span class="en">AltiMentum Global LLC is the mother institution — the umbrella under which every dream, every venture, and every mission lives. Founded by Daniel Mwendanga and registered in the Commonwealth of Virginia, it is a life's architecture: coaching minds, securing nations, investigating the truth, building peace, enabling travel, and investing in communities the world has overlooked.</span>
+          <span class="fr">AltiMentum Global LLC est l'institution mère — le toit sous lequel chaque rêve, chaque entreprise et chaque mission prend vie. Fondée par Daniel Mwendanga et enregistrée dans le Commonwealth de Virginie, c'est une architecture de vie : former les esprits, sécuriser les nations, enquêter sur la vérité, construire la paix, faciliter le voyage et investir dans les communautés que le monde a négligées.</span>
+        </p>
         <div class="about-vals">
-          <div class="val-card"><div class="val-title">Integrity</div><div class="val-desc">Rooted in truth and purpose</div></div>
-          <div class="val-card"><div class="val-title">Excellence</div><div class="val-desc">World-class in every venture</div></div>
-          <div class="val-card"><div class="val-title">Impact</div><div class="val-desc">Africa first, world always</div></div>
-          <div class="val-card"><div class="val-title">Vision</div><div class="val-desc">Building for generations</div></div>
+          <div class="val-card">
+            <div class="val-title"><span class="en">Integrity</span><span class="fr">Intégrité</span></div>
+            <div class="val-desc"><span class="en">Rooted in truth and purpose</span><span class="fr">Ancrée dans la vérité et la mission</span></div>
+          </div>
+          <div class="val-card">
+            <div class="val-title"><span class="en">Excellence</span><span class="fr">Excellence</span></div>
+            <div class="val-desc"><span class="en">World-class in every venture</span><span class="fr">Niveau mondial dans chaque domaine</span></div>
+          </div>
+          <div class="val-card">
+            <div class="val-title"><span class="en">Impact</span><span class="fr">Impact</span></div>
+            <div class="val-desc"><span class="en">Africa first, world always</span><span class="fr">L'Afrique d'abord, le monde toujours</span></div>
+          </div>
+          <div class="val-card">
+            <div class="val-title"><span class="en">Vision</span><span class="fr">Vision</span></div>
+            <div class="val-desc"><span class="en">Building for generations</span><span class="fr">Construire pour les générations</span></div>
+          </div>
         </div>
       </div>
-      <div class="split-photo tall">
-        <!-- REPLACE: Daniel Mwendanga professional portrait -->
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Daniel Mwendanga — Founder & CEO AltiMentum Global">
+      <div class="split-photo">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Daniel Mwendanga">
       </div>
     </div>
   </div>
 
-  <!-- VENTURES with photos -->
+  <!-- VENTURES -->
   <div class="section-full">
     <div class="section-full-inner">
-      <div class="sec-eye">Our Divisions</div>
-      <h2 class="sec-h">Built for Purpose. Built to Last.</h2>
+      <div class="sec-eye"><span class="en">Our Divisions</span><span class="fr">Nos Divisions</span></div>
+      <h2 class="sec-h"><span class="en">Built for Purpose. Built to Last.</span><span class="fr">Construites avec Sens. Construites pour Durer.</span></h2>
       <div class="ventures-grid">
         <div class="vc" onclick="showPage('coaching')">
-          <!-- REPLACE: Speaker on stage / coaching session -->
           <img class="vc-photo" src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80" alt="Coaching">
           <div class="vc-content">
             <div class="vc-tag">Coaching</div>
             <div class="vc-name">Daniel Mwendanga Coaching</div>
-            <div class="vc-desc">Strategic Reconstruction Coaching. Rebuilding lives and unlocking potential for leaders worldwide.</div>
-            <div class="vc-link">Explore →</div>
+            <div class="vc-desc">
+              <span class="en">Strategic Reconstruction Coaching. Rebuilding lives and unlocking potential for leaders worldwide.</span>
+              <span class="fr">Coaching de Reconstruction Stratégique. Reconstruire des vies et libérer le potentiel des leaders.</span>
+            </div>
+            <div class="vc-link"><span class="en">Explore →</span><span class="fr">Explorer →</span></div>
           </div>
         </div>
         <div class="vc" onclick="showPage('srm')">
-          <!-- REPLACE: Security team / professional guards -->
           <img class="vc-photo" src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=600&q=80" alt="Security">
           <div class="vc-content">
-            <div class="vc-tag">Security</div>
+            <div class="vc-tag"><span class="en">Security</span><span class="fr">Sécurité</span></div>
             <div class="vc-name">SRM Security Risk Monitoring</div>
-            <div class="vc-desc">Physical security, access control, guard forces, close protection and intelligence — Grand Lakes &amp; Africa.</div>
-            <div class="vc-link">Explore →</div>
+            <div class="vc-desc">
+              <span class="en">Physical security, access control, guard forces, close protection — Grand Lakes &amp; Africa.</span>
+              <span class="fr">Sécurité physique, contrôle d'accès, forces de garde, protection rapprochée — Grands Lacs &amp; Afrique.</span>
+            </div>
+            <div class="vc-link"><span class="en">Explore →</span><span class="fr">Explorer →</span></div>
           </div>
         </div>
         <div class="vc" onclick="showPage('ngo')">
-          <!-- REPLACE: Community meeting / peace dialogue -->
-          <img class="vc-photo" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="Peace NGO">
+          <img class="vc-photo" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="NGO">
           <div class="vc-content">
-            <div class="vc-tag">NGO</div>
+            <div class="vc-tag"><span class="en">NGO</span><span class="fr">ONG</span></div>
             <div class="vc-name">Peace &amp; Security Bridges</div>
-            <div class="vc-desc">Humanitarian response, grassroots peacebuilding, dialogue facilitation and security sector reform.</div>
-            <div class="vc-link">Explore →</div>
+            <div class="vc-desc">
+              <span class="en">Humanitarian response, grassroots peacebuilding, dialogue facilitation across Africa.</span>
+              <span class="fr">Réponse humanitaire, consolidation de la paix, facilitation du dialogue à travers l'Afrique.</span>
+            </div>
+            <div class="vc-link"><span class="en">Explore →</span><span class="fr">Explorer →</span></div>
           </div>
         </div>
         <div class="vc" onclick="showPage('travel')">
-          <!-- REPLACE: African landscape / travel -->
-          <img class="vc-photo" src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=600&q=80" alt="Life Travels">
+          <img class="vc-photo" src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=600&q=80" alt="Travel">
           <div class="vc-content">
-            <div class="vc-tag">Travel</div>
+            <div class="vc-tag"><span class="en">Travel</span><span class="fr">Voyage</span></div>
             <div class="vc-name">Life Travels Company</div>
-            <div class="vc-desc">Purpose-driven travel, transformation retreats, ministry missions and Grand Lakes expeditions.</div>
-            <div class="vc-link">Explore →</div>
+            <div class="vc-desc">
+              <span class="en">Purpose-driven travel, transformation retreats, ministry missions and Grand Lakes expeditions.</span>
+              <span class="fr">Voyages à dessein, retraites de transformation, missions et expéditions aux Grands Lacs.</span>
+            </div>
+            <div class="vc-link"><span class="en">Explore →</span><span class="fr">Explorer →</span></div>
           </div>
         </div>
         <div class="vc" onclick="showPage('investigations')">
-          <!-- REPLACE: Intelligence / investigation themed -->
           <img class="vc-photo" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Investigations">
           <div class="vc-content">
-            <div class="vc-tag inv-tag">Investigations</div>
-            <div class="vc-name">Background Intelligence &amp; Investigations</div>
-            <div class="vc-desc">Deep-screening background checks for pre-employment on the African continent. 10+ year community investigation.</div>
-            <div class="vc-link">Explore →</div>
+            <div class="vc-tag inv-tag"><span class="en">Investigations</span><span class="fr">Investigations</span></div>
+            <div class="vc-name"><span class="en">Background Intelligence &amp; Investigations</span><span class="fr">Renseignement &amp; Investigations</span></div>
+            <div class="vc-desc">
+              <span class="en">Deep-screening background checks for pre-employment on the African continent. 10+ year community investigation.</span>
+              <span class="fr">Enquêtes de fond approfondies pour le pré-emploi sur le continent africain. Investigation communautaire sur 10+ ans.</span>
+            </div>
+            <div class="vc-link"><span class="en">Explore →</span><span class="fr">Explorer →</span></div>
+          </div>
+        </div>
+        
+        <div class="vc" onclick="showPage('bha')">
+          <img class="vc-photo" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="BHA">
+          <div class="vc-content">
+            <div class="vc-tag" style="background:rgba(139,60,120,0.15);border-color:rgba(139,60,120,0.4);color:#E8A0D8;">BHA</div>
+            <div class="vc-name"><span class="en">Broken Hearts Association</span><span class="fr">Association des Cœurs Brisés</span></div>
+            <div class="vc-desc">
+              <span class="en">A free community for those carrying life's invisible wounds — grief, loss, trauma, displacement. A safe space to be heard, supported and guided back toward hope.</span>
+              <span class="fr">Une communauté gratuite pour ceux qui portent les blessures invisibles de la vie — deuil, perte, traumatisme, déplacement. Un espace sûr pour être entendu et guidé vers l'espoir.</span>
+            </div>
+            <div class="vc-link"><span class="en">Explore →</span><span class="fr">Explorer →</span></div>
           </div>
         </div>
         <div class="vc" onclick="showPage('contact')">
-          <!-- REPLACE: Partnership / handshake / business meeting -->
           <img class="vc-photo" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80" alt="Partnership">
           <div class="vc-content">
-            <div class="vc-tag">Partner</div>
-            <div class="vc-name">Strategic Partnerships &amp; Investment</div>
-            <div class="vc-desc">Equity partnerships, joint ventures, corporate clients and institutional partners — open for the right collaborations.</div>
-            <div class="vc-link">Connect →</div>
+            <div class="vc-tag"><span class="en">Partner</span><span class="fr">Partenariat</span></div>
+            <div class="vc-name"><span class="en">Strategic Partnerships &amp; Investment</span><span class="fr">Partenariats Stratégiques &amp; Investissement</span></div>
+            <div class="vc-desc">
+              <span class="en">Equity partnerships, joint ventures, corporate and institutional partners welcome.</span>
+              <span class="fr">Participations, coentreprises, partenaires corporatifs et institutionnels bienvenus.</span>
+            </div>
+            <div class="vc-link"><span class="en">Connect →</span><span class="fr">Connecter →</span></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- FOUNDER with background photo -->
-  <div class="founder-strip" style="min-height:400px;">
+  <!-- FOUNDER QUOTE -->
+  <div class="founder-strip">
     <div class="founder-bg">
-      <!-- REPLACE: Daniel speaking or African vista -->
       <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=1600&q=80" alt="Africa">
       <div class="founder-bg-overlay"></div>
     </div>
     <div class="founder-inner">
-      <div class="founder-eye">From the Founder</div>
-      <div class="founder-quote">"I am not just building companies. I am building a legacy — for Africa, for the world, for every generation that deserves a better tomorrow."</div>
+      <div class="founder-eye"><span class="en">From the Founder</span><span class="fr">Du Fondateur</span></div>
+      <div class="founder-quote">
+        <span class="en">"I am not just building companies. I am building a legacy — for Africa, for the world, for every generation that deserves a better tomorrow."</span>
+        <span class="fr">« Je ne construis pas seulement des entreprises. Je construis un héritage — pour l'Afrique, pour le monde, pour chaque génération qui mérite un lendemain meilleur. »</span>
+      </div>
       <div class="founder-rule">Rise With Momentum</div>
       <div class="founder-name">Daniel Mwendanga</div>
-      <div class="founder-title">Founder &amp; CEO — AltiMentum Global LLC · Arlington, Virginia</div>
+      <div class="founder-title">
+        <span class="en">Founder &amp; CEO — AltiMentum Global LLC · Arlington, Virginia</span>
+        <span class="fr">Fondateur &amp; PDG — AltiMentum Global LLC · Arlington, Virginie</span>
+      </div>
     </div>
   </div>
 
-  <!-- EXPANDING VISION with photos -->
+  <!-- EXPANDING VISION -->
   <div class="section-full">
     <div class="section-full-inner">
-      <div class="sec-eye">Expanding Horizons</div>
-      <h2 class="sec-h">The Vision Beyond</h2>
+      <div class="sec-eye"><span class="en">Expanding Horizons</span><span class="fr">Horizons en Expansion</span></div>
+      <h2 class="sec-h"><span class="en">The Vision Beyond</span><span class="fr">La Vision au-delà</span></h2>
       <div class="pillars-grid">
         <div class="pillar">
-          <!-- REPLACE: Public speaking event -->
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=80" alt="Public Speaking">
-          <div class="pillar-content"><div class="pillar-icon">🎤</div><div class="pillar-name">Public Speaking</div></div>
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&q=80" alt="Speaking">
+          <div class="pillar-content"><div class="pillar-icon">🎤</div><div class="pillar-name"><span class="en">Public Speaking</span><span class="fr">Conférences</span></div></div>
         </div>
         <div class="pillar">
-          <!-- REPLACE: Church / ministry -->
           <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=400&q=80" alt="Ministry">
-          <div class="pillar-content"><div class="pillar-icon">⛪</div><div class="pillar-name">Ministry &amp; Crusades</div></div>
+          <div class="pillar-content"><div class="pillar-icon">⛪</div><div class="pillar-name"><span class="en">Ministry &amp; Crusades</span><span class="fr">Ministère &amp; Croisades</span></div></div>
         </div>
         <div class="pillar">
-          <!-- REPLACE: Affordable housing / community homes -->
-          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80" alt="Affordable Housing">
-          <div class="pillar-content"><div class="pillar-icon">🏠</div><div class="pillar-name">Affordable Housing</div></div>
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80" alt="Housing">
+          <div class="pillar-content"><div class="pillar-icon">🏠</div><div class="pillar-name"><span class="en">Affordable Housing</span><span class="fr">Logements Abordables</span></div></div>
         </div>
         <div class="pillar">
-          <!-- REPLACE: City skyline / real estate -->
           <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80" alt="Real Estate">
-          <div class="pillar-content"><div class="pillar-icon">🏙️</div><div class="pillar-name">Real Estate</div></div>
+          <div class="pillar-content"><div class="pillar-icon">🏙️</div><div class="pillar-name"><span class="en">Real Estate</span><span class="fr">Immobilier</span></div></div>
         </div>
         <div class="pillar">
-          <!-- REPLACE: Philanthropy / community help -->
           <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=400&q=80" alt="Philanthropy">
-          <div class="pillar-content"><div class="pillar-icon">🤝</div><div class="pillar-name">Philanthropy</div></div>
+          <div class="pillar-content"><div class="pillar-icon">🤝</div><div class="pillar-name"><span class="en">Philanthropy</span><span class="fr">Philanthropie</span></div></div>
         </div>
         <div class="pillar">
-          <!-- REPLACE: Global investment / world map -->
-          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80" alt="Global Investment">
-          <div class="pillar-content"><div class="pillar-icon">🌍</div><div class="pillar-name">Global Investment</div></div>
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80" alt="Investment">
+          <div class="pillar-content"><div class="pillar-icon">🌍</div><div class="pillar-name"><span class="en">Global Investment</span><span class="fr">Investissement Mondial</span></div></div>
         </div>
         <div class="pillar">
-          <!-- REPLACE: Logistics / trucks / supply chain -->
           <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&q=80" alt="Logistics">
-          <div class="pillar-content"><div class="pillar-icon">🚛</div><div class="pillar-name">Logistics</div></div>
+          <div class="pillar-content"><div class="pillar-icon">🚛</div><div class="pillar-name"><span class="en">Logistics</span><span class="fr">Logistique</span></div></div>
         </div>
         <div class="pillar">
-          <!-- REPLACE: Education / students / university -->
           <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80" alt="Education">
-          <div class="pillar-content"><div class="pillar-icon">🎓</div><div class="pillar-name">Education</div></div>
+          <div class="pillar-content"><div class="pillar-icon">🎓</div><div class="pillar-name"><span class="en">Education</span><span class="fr">Éducation</span></div></div>
         </div>
       </div>
     </div>
@@ -487,372 +569,630 @@ body{background:var(--deep);color:var(--text);font-family:'Barlow',sans-serif;ov
     <div class="footer-global">Global LLC · Arlington, Virginia</div>
     <div class="footer-tagline-rule">Rise With Momentum</div>
     <div class="footer-links">
-      <button class="footer-link" onclick="showPage('home')">Home</button>
+      <button class="footer-link" onclick="showPage('home')"><span class="en">Home</span><span class="fr">Accueil</span></button>
       <button class="footer-link" onclick="showPage('coaching')">Coaching</button>
-      <button class="footer-link" onclick="showPage('srm')">SRM Security</button>
-      <button class="footer-link" onclick="showPage('ngo')">PSB NGO</button>
+      <button class="footer-link" onclick="showPage('srm')"><span class="en">SRM Security</span><span class="fr">SRM Sécurité</span></button>
+      <button class="footer-link" onclick="showPage('ngo')"><span class="en">PSB NGO</span><span class="fr">PSB ONG</span></button>
       <button class="footer-link" onclick="showPage('travel')">Life Travels</button>
       <button class="footer-link" onclick="showPage('investigations')">Investigations</button>
+      <button class="footer-link" onclick="showPage('bha')">BHA</button>
       <button class="footer-link" onclick="showPage('contact')">Contact</button>
     </div>
     <hr class="footer-hr">
-    <div class="footer-copy">© 2026 AltiMentum Global LLC · altimentumglobal.com · srmgrandlakes.org · danielmwendanga.com · All Rights Reserved</div>
+    <div class="footer-copy">© 2026 AltiMentum Global LLC · altimentumglobal.com · srmgrandlakes.org · danielmwendanga.com</div>
   </footer>
 </div>
 
 <!-- ════ COACHING PAGE ════ -->
 <div class="page" id="page-coaching">
   <div class="vd-hero">
-    <div class="vd-back-top"><button class="vd-back" onclick="showPage('home')">← Back to AltiMentum Global</button></div>
+    <div class="vd-back-top"><button class="vd-back" onclick="showPage('home')"><span class="en">← Back to AltiMentum Global</span><span class="fr">← Retour à AltiMentum Global</span></button></div>
     <div class="vd-hero-photo-wrap">
-      <!-- REPLACE: Daniel speaking on stage at conference -->
-      <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1400&q=80" alt="Daniel Mwendanga Coaching">
+      <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1400&q=80" alt="Coaching">
       <div class="vd-hero-overlay"></div>
       <div class="vd-hero-text">
-        <div class="vd-badge">Coaching Division</div>
+        <div class="vd-badge"><span class="en">Coaching Division</span><span class="fr">Division Coaching</span></div>
         <h1 class="vd-title">Daniel Mwendanga Coaching</h1>
-        <div class="vd-tagline">"Strategic Reconstruction. Transforming lives from the inside out."</div>
+        <div class="vd-tagline">
+          <span class="en">"Strategic Reconstruction. Transforming lives from the inside out."</span>
+          <span class="fr">« Reconstruction Stratégique. Transformer les vies de l'intérieur. »</span>
+        </div>
       </div>
     </div>
   </div>
   <div class="vd-body">
     <div class="vd-section">
-      <h3 class="vd-sh">Our Mission</h3>
-      <p class="vd-p">Daniel Mwendanga Coaching is the personal transformation arm of AltiMentum Global. We work with individuals, executives, and organizations who are ready to be reconstructed — not just improved. Through powerful one-on-one coaching, group programs and global speaking engagements, Daniel guides people through the most critical turning points of their lives.</p>
+      <h3 class="vd-sh"><span class="en">Our Mission</span><span class="fr">Notre Mission</span></h3>
+      <p class="vd-p">
+        <span class="en">Daniel Mwendanga Coaching is the personal transformation arm of AltiMentum Global. We work with individuals, executives, and organizations who are ready to be reconstructed — not just improved. Through powerful one-on-one coaching, group programs and global speaking engagements, Daniel guides people through the most critical turning points of their lives.</span>
+        <span class="fr">Daniel Mwendanga Coaching est le bras de transformation personnelle d'AltiMentum Global. Nous travaillons avec des individus, des cadres et des organisations prêts à être reconstruits — pas seulement améliorés. À travers un coaching individuel puissant, des programmes de groupe et des conférences mondiales, Daniel guide les personnes à travers les tournants les plus critiques de leur vie.</span>
+      </p>
     </div>
-    <!-- Section photo -->
     <div class="section-photo-wrap">
-      <!-- REPLACE: Coaching session / executive meeting -->
       <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80" alt="Coaching session">
     </div>
     <div class="vd-section">
-      <h3 class="vd-sh">What We Offer</h3>
+      <h3 class="vd-sh"><span class="en">What We Offer</span><span class="fr">Ce Que Nous Offrons</span></h3>
       <div class="services-grid">
-        <div class="srv"><div class="srv-t">Strategic Life Coaching</div><div class="srv-d">Deep personal reconstruction for individuals at crossroads</div></div>
-        <div class="srv"><div class="srv-t">Executive Coaching</div><div class="srv-d">Leadership transformation for C-suite and senior managers</div></div>
-        <div class="srv"><div class="srv-t">Group Programs</div><div class="srv-d">Cohort-based transformation journeys for teams and communities</div></div>
-        <div class="srv"><div class="srv-t">Keynote Speaking</div><div class="srv-d">International speaking engagements across Africa and globally</div></div>
-        <div class="srv"><div class="srv-t">Workshops &amp; Masterclasses</div><div class="srv-d">Intensive training on purpose, identity and momentum</div></div>
-        <div class="srv"><div class="srv-t">Online Courses</div><div class="srv-d">Self-paced digital learning for global reach</div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Strategic Life Coaching</span><span class="fr">Coaching de Vie Stratégique</span></div><div class="srv-d"><span class="en">Deep personal reconstruction for individuals at crossroads</span><span class="fr">Reconstruction personnelle profonde pour les individus à un carrefour</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Executive Coaching</span><span class="fr">Coaching Exécutif</span></div><div class="srv-d"><span class="en">Leadership transformation for C-suite and senior managers</span><span class="fr">Transformation du leadership pour les dirigeants et cadres supérieurs</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Group Programs</span><span class="fr">Programmes de Groupe</span></div><div class="srv-d"><span class="en">Cohort-based transformation journeys for teams</span><span class="fr">Parcours de transformation en cohorte pour les équipes</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Keynote Speaking</span><span class="fr">Conférences Magistrales</span></div><div class="srv-d"><span class="en">International speaking engagements across Africa and globally</span><span class="fr">Conférences internationales à travers l'Afrique et le monde</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Workshops &amp; Masterclasses</span><span class="fr">Ateliers &amp; Masterclasses</span></div><div class="srv-d"><span class="en">Intensive training on purpose, identity and momentum</span><span class="fr">Formation intensive sur la purpose, l'identité et le momentum</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Online Courses</span><span class="fr">Cours en Ligne</span></div><div class="srv-d"><span class="en">Self-paced digital learning for global reach</span><span class="fr">Apprentissage numérique à son propre rythme pour une portée mondiale</span></div></div>
       </div>
     </div>
     <div class="vd-section">
-      <h3 class="vd-sh">The Approach</h3>
-      <p class="vd-p">Daniel's coaching philosophy is rooted in Strategic Reconstruction — the belief that true change requires dismantling the broken foundations and building something entirely new. Informed by lived experience across Africa, Europe and the world, the coaching goes beyond motivation to create lasting structural change in how people think, decide and move forward.</p>
+      <h3 class="vd-sh"><span class="en">The Approach</span><span class="fr">L'Approche</span></h3>
+      <p class="vd-p">
+        <span class="en">Daniel's coaching philosophy is rooted in Strategic Reconstruction — the belief that true change requires dismantling the broken foundations and building something entirely new. Informed by lived experience across Africa, Europe and the world.</span>
+        <span class="fr">La philosophie de coaching de Daniel est ancrée dans la Reconstruction Stratégique — la conviction que le vrai changement nécessite de démanteler les fondations brisées et de construire quelque chose d'entièrement nouveau. Informée par une expérience vécue à travers l'Afrique, l'Europe et le monde.</span>
+      </p>
     </div>
   </div>
-  <div class="vd-cta"><h3>Begin Your Transformation</h3><p>Ready to rise with momentum? Book a discovery session with Daniel.</p><button class="btn-gold" onclick="showPage('contact')">Book a Session ↗</button></div>
-  <footer class="footer" style="padding:2rem;"><div class="footer-logo">ALTIMENTUM</div><div class="footer-global">Global LLC · Coaching Division</div><div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC</div></footer>
+  <div class="vd-cta">
+    <h3><span class="en">Begin Your Transformation</span><span class="fr">Commencez Votre Transformation</span></h3>
+    <p><span class="en">Ready to rise with momentum? Book a discovery session with Daniel.</span><span class="fr">Prêt à s'élever avec élan ? Réservez une session découverte avec Daniel.</span></p>
+    <button class="btn-gold" onclick="showPage('contact')"><span class="en">Book a Session ↗</span><span class="fr">Réserver une Session ↗</span></button>
+  </div>
+  <footer class="footer" style="padding:2rem;"><div class="footer-logo">ALTIMENTUM</div><div class="footer-global">Global LLC · Coaching</div><div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC</div></footer>
 </div>
 
 <!-- ════ SRM PAGE ════ -->
 <div class="page" id="page-srm">
   <div class="vd-hero">
-    <div class="vd-back-top"><button class="vd-back" onclick="showPage('home')">← Back to AltiMentum Global</button></div>
+    <div class="vd-back-top"><button class="vd-back" onclick="showPage('home')"><span class="en">← Back</span><span class="fr">← Retour</span></button></div>
     <div class="vd-hero-photo-wrap">
-      <!-- REPLACE: Security team / professional operatives Africa -->
       <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=1400&q=80" alt="SRM Security">
       <div class="vd-hero-overlay"></div>
       <div class="vd-hero-text">
-        <div class="vd-badge">Security Division</div>
+        <div class="vd-badge"><span class="en">Security Division</span><span class="fr">Division Sécurité</span></div>
         <h1 class="vd-title">SRM — Security Risk Monitoring</h1>
-        <div class="vd-tagline">"Grand Lakes &amp; Africa. Protecting what matters most."</div>
+        <div class="vd-tagline">
+          <span class="en">"Grand Lakes &amp; Africa. Protecting what matters most."</span>
+          <span class="fr">« Grands Lacs &amp; Afrique. Protéger ce qui compte le plus. »</span>
+        </div>
       </div>
     </div>
   </div>
   <div class="vd-body">
     <div class="vd-section">
-      <h3 class="vd-sh">About SRM</h3>
-      <p class="vd-p">Security Risk Monitoring (SRM) is AltiMentum Global's professional security intelligence and risk management division. We deliver world-class security solutions to governments, corporations, NGOs and individuals operating in complex environments across the African continent and the Great Lakes region.</p>
+      <h3 class="vd-sh"><span class="en">About SRM</span><span class="fr">À Propos de SRM</span></h3>
+      <p class="vd-p">
+        <span class="en">Security Risk Monitoring (SRM) is AltiMentum Global's professional security intelligence and risk management division. We deliver world-class security solutions to governments, corporations, NGOs and individuals operating across the African continent and the Great Lakes region.</span>
+        <span class="fr">Security Risk Monitoring (SRM) est la division de renseignement sécuritaire et de gestion des risques d'AltiMentum Global. Nous fournissons des solutions de sécurité de classe mondiale aux gouvernements, entreprises, ONG et individus opérant à travers le continent africain et la région des Grands Lacs.</span>
+      </p>
     </div>
-    <!-- Grand Lakes photo -->
     <div class="section-photo-wrap">
-      <!-- REPLACE: Lake Kivu / Grand Lakes aerial view -->
-      <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80" alt="Grand Lakes Africa">
+      <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80" alt="Grand Lakes">
     </div>
     <div class="vd-section">
-      <h3 class="vd-sh">Our Services</h3>
+      <h3 class="vd-sh"><span class="en">Our Services</span><span class="fr">Nos Services</span></h3>
       <div class="services-grid">
-        <div class="srv"><div class="srv-t">Physical Security</div><div class="srv-d">Security design, implementation and management</div></div>
-        <div class="srv"><div class="srv-t">Access Control &amp; Guard Forces</div><div class="srv-d">Professional guard force deployment and access systems</div></div>
-        <div class="srv"><div class="srv-t">Events Security</div><div class="srv-d">Full-spectrum event security planning and execution</div></div>
-        <div class="srv"><div class="srv-t">Close Protection</div><div class="srv-d">Executive and VIP close protection operations</div></div>
-        <div class="srv"><div class="srv-t">Security Risk Assessment</div><div class="srv-d">Threat and vulnerability analysis for any environment</div></div>
-        <div class="srv"><div class="srv-t">Intelligence Monitoring</div><div class="srv-d">Real-time security intelligence across Grand Lakes &amp; Africa</div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Physical Security</span><span class="fr">Sécurité Physique</span></div><div class="srv-d"><span class="en">Security design, implementation and management</span><span class="fr">Conception, mise en œuvre et gestion de la sécurité</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Access Control &amp; Guard Forces</span><span class="fr">Contrôle d'Accès &amp; Forces de Garde</span></div><div class="srv-d"><span class="en">Professional guard force deployment</span><span class="fr">Déploiement professionnel de forces de garde</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Events Security</span><span class="fr">Sécurité Événementielle</span></div><div class="srv-d"><span class="en">Full-spectrum event security planning</span><span class="fr">Planification de sécurité événementielle complète</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Close Protection</span><span class="fr">Protection Rapprochée</span></div><div class="srv-d"><span class="en">Executive and VIP close protection operations</span><span class="fr">Opérations de protection rapprochée pour dirigeants et VIP</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Security Risk Assessment</span><span class="fr">Évaluation des Risques Sécuritaires</span></div><div class="srv-d"><span class="en">Threat and vulnerability analysis</span><span class="fr">Analyse des menaces et vulnérabilités</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Intelligence Monitoring</span><span class="fr">Surveillance du Renseignement</span></div><div class="srv-d"><span class="en">Real-time security intelligence — Grand Lakes &amp; Africa</span><span class="fr">Renseignement sécuritaire en temps réel — Grands Lacs &amp; Afrique</span></div></div>
       </div>
     </div>
-    <div class="vd-section">
-      <h3 class="vd-sh">Grand Lakes &amp; Africa Expertise</h3>
-      <p class="vd-p">SRM combines deep local knowledge of the Grand Lakes region — one of the continent's most complex security environments — with professional international standards. Our networks, our intelligence, and our people give clients the confidence to operate safely and effectively.</p>
-    </div>
   </div>
-  <div class="vd-cta"><h3>Secure Your Operations</h3><p>Contact SRM for a confidential security consultation.</p><button class="btn-gold" onclick="showPage('contact')">Request Consultation ↗</button></div>
-  <footer class="footer" style="padding:2rem;"><div class="footer-logo">ALTIMENTUM</div><div class="footer-global">Global LLC · SRM Security · srmgrandlakes.org</div><div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC</div></footer>
+  <div class="vd-cta">
+    <h3><span class="en">Secure Your Operations</span><span class="fr">Sécurisez Vos Opérations</span></h3>
+    <p><span class="en">Contact SRM for a confidential security consultation.</span><span class="fr">Contactez SRM pour une consultation sécuritaire confidentielle.</span></p>
+    <button class="btn-gold" onclick="showPage('contact')"><span class="en">Request Consultation ↗</span><span class="fr">Demander une Consultation ↗</span></button>
+  </div>
+  <footer class="footer" style="padding:2rem;"><div class="footer-logo">ALTIMENTUM</div><div class="footer-global">Global LLC · SRM · srmgrandlakes.org</div><div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC</div></footer>
 </div>
 
 <!-- ════ NGO PAGE ════ -->
 <div class="page" id="page-ngo">
   <div class="vd-hero">
-    <div class="vd-back-top"><button class="vd-back" onclick="showPage('home')">← Back to AltiMentum Global</button></div>
+    <div class="vd-back-top"><button class="vd-back" onclick="showPage('home')"><span class="en">← Back</span><span class="fr">← Retour</span></button></div>
     <div class="vd-hero-photo-wrap">
-      <!-- REPLACE: Community dialogue / peace meeting Africa -->
-      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1400&q=80" alt="Peace and Security Bridges">
+      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1400&q=80" alt="Peace">
       <div class="vd-hero-overlay"></div>
       <div class="vd-hero-text">
-        <div class="vd-badge">NGO Division</div>
+        <div class="vd-badge"><span class="en">NGO Division</span><span class="fr">Division ONG</span></div>
         <h1 class="vd-title">Peace &amp; Security Bridges</h1>
-        <div class="vd-tagline">"Building bridges where walls have stood too long."</div>
+        <div class="vd-tagline">
+          <span class="en">"Building bridges where walls have stood too long."</span>
+          <span class="fr">« Construire des ponts là où les murs ont trop longtemps persisté. »</span>
+        </div>
       </div>
     </div>
   </div>
   <div class="vd-body">
     <div class="vd-section">
-      <h3 class="vd-sh">Our Purpose</h3>
-      <p class="vd-p">Peace and Security Bridges is AltiMentum Global's NGO dedicated to humanitarian response operations and sustainable peacebuilding. We work with communities, governments and civil society to transform conflict environments into spaces of stability, hope and shared humanity.</p>
+      <h3 class="vd-sh"><span class="en">Our Purpose</span><span class="fr">Notre Mission</span></h3>
+      <p class="vd-p">
+        <span class="en">Peace and Security Bridges is AltiMentum Global's NGO dedicated to humanitarian response operations and sustainable peacebuilding. We work with communities, governments and civil society to transform conflict environments into spaces of stability, hope and shared humanity.</span>
+        <span class="fr">Peace and Security Bridges est l'ONG d'AltiMentum Global dédiée aux opérations de réponse humanitaire et à la consolidation durable de la paix. Nous travaillons avec les communautés, les gouvernements et la société civile pour transformer les environnements de conflit en espaces de stabilité, d'espoir et d'humanité partagée.</span>
+      </p>
     </div>
     <div class="section-photo-wrap">
-      <!-- REPLACE: Humanitarian field work / Africa community -->
-      <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1200&q=80" alt="Humanitarian work">
+      <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1200&q=80" alt="Humanitarian">
     </div>
     <div class="vd-section">
-      <h3 class="vd-sh">Our Programs</h3>
+      <h3 class="vd-sh"><span class="en">Our Programs</span><span class="fr">Nos Programmes</span></h3>
       <div class="services-grid">
-        <div class="srv"><div class="srv-t">Humanitarian Response</div><div class="srv-d">Emergency operations in conflict and crisis zones</div></div>
-        <div class="srv"><div class="srv-t">Peace Dialogues</div><div class="srv-d">Facilitated dialogue between communities in conflict</div></div>
-        <div class="srv"><div class="srv-t">Reconciliation Programs</div><div class="srv-d">Grassroots reconciliation and healing post-conflict</div></div>
-        <div class="srv"><div class="srv-t">Security Sector Reform</div><div class="srv-d">Advocacy for accountable security institutions</div></div>
-        <div class="srv"><div class="srv-t">Youth Peacebuilding</div><div class="srv-d">Empowering young leaders as agents of peace</div></div>
-        <div class="srv"><div class="srv-t">Research &amp; Advocacy</div><div class="srv-d">Policy research and advocacy for peace and stability</div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Humanitarian Response</span><span class="fr">Réponse Humanitaire</span></div><div class="srv-d"><span class="en">Emergency operations in conflict zones</span><span class="fr">Opérations d'urgence dans les zones de conflit</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Peace Dialogues</span><span class="fr">Dialogues de Paix</span></div><div class="srv-d"><span class="en">Facilitated dialogue between communities in conflict</span><span class="fr">Dialogue facilité entre communautés en conflit</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Reconciliation Programs</span><span class="fr">Programmes de Réconciliation</span></div><div class="srv-d"><span class="en">Grassroots reconciliation and healing</span><span class="fr">Réconciliation et guérison à la base</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Security Sector Reform</span><span class="fr">Réforme du Secteur de Sécurité</span></div><div class="srv-d"><span class="en">Advocacy for accountable security institutions</span><span class="fr">Plaidoyer pour des institutions de sécurité responsables</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Youth Peacebuilding</span><span class="fr">Consolidation de Paix par les Jeunes</span></div><div class="srv-d"><span class="en">Empowering young leaders as agents of peace</span><span class="fr">Autonomiser les jeunes leaders comme agents de paix</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Research &amp; Advocacy</span><span class="fr">Recherche &amp; Plaidoyer</span></div><div class="srv-d"><span class="en">Policy research and advocacy for stability</span><span class="fr">Recherche politique et plaidoyer pour la stabilité</span></div></div>
       </div>
     </div>
   </div>
-  <div class="vd-cta"><h3>Partner for Peace</h3><p>Donors, partners and volunteers are welcome. Join the mission.</p><button class="btn-gold" onclick="showPage('contact')">Partner With Us ↗</button></div>
-  <footer class="footer" style="padding:2rem;"><div class="footer-logo">ALTIMENTUM</div><div class="footer-global">Global LLC · Peace &amp; Security Bridges NGO</div><div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC</div></footer>
+  <div class="vd-cta">
+    <h3><span class="en">Partner for Peace</span><span class="fr">Partenaire pour la Paix</span></h3>
+    <p><span class="en">Donors, partners and volunteers are welcome.</span><span class="fr">Donateurs, partenaires et bénévoles sont les bienvenus.</span></p>
+    <button class="btn-gold" onclick="showPage('contact')"><span class="en">Partner With Us ↗</span><span class="fr">Devenir Partenaire ↗</span></button>
+  </div>
+  <footer class="footer" style="padding:2rem;"><div class="footer-logo">ALTIMENTUM</div><div class="footer-global">Global LLC · <span class="en">Peace &amp; Security Bridges NGO</span><span class="fr">Peace &amp; Security Bridges ONG</span></div><div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC</div></footer>
 </div>
 
 <!-- ════ TRAVEL PAGE ════ -->
 <div class="page" id="page-travel">
   <div class="vd-hero">
-    <div class="vd-back-top"><button class="vd-back" onclick="showPage('home')">← Back to AltiMentum Global</button></div>
+    <div class="vd-back-top"><button class="vd-back" onclick="showPage('home')"><span class="en">← Back</span><span class="fr">← Retour</span></button></div>
     <div class="vd-hero-photo-wrap">
-      <!-- REPLACE: Stunning African landscape / Great Rift Valley sunrise -->
-      <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1400&q=80" alt="Life Travels Company">
+      <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1400&q=80" alt="Life Travels">
       <div class="vd-hero-overlay"></div>
       <div class="vd-hero-text">
-        <div class="vd-badge">Travel Division</div>
+        <div class="vd-badge"><span class="en">Travel Division</span><span class="fr">Division Voyage</span></div>
         <h1 class="vd-title">Life Travels Company</h1>
-        <div class="vd-tagline">"Every journey is a chapter in your life's story."</div>
+        <div class="vd-tagline">
+          <span class="en">"Every journey is a chapter in your life's story."</span>
+          <span class="fr">« Chaque voyage est un chapitre de l'histoire de votre vie. »</span>
+        </div>
       </div>
     </div>
   </div>
   <div class="vd-body">
     <div class="vd-section">
-      <h3 class="vd-sh">About Life Travels</h3>
-      <p class="vd-p">Life Travels Company is AltiMentum Global's travel and experiences division. We design purpose-driven travel experiences that connect people to the richness of African culture, the beauty of the world's hidden places, and the deeper meaning that comes from exploring beyond the familiar.</p>
+      <h3 class="vd-sh"><span class="en">About Life Travels</span><span class="fr">À Propos de Life Travels</span></h3>
+      <p class="vd-p">
+        <span class="en">Life Travels Company is AltiMentum Global's travel and experiences division. We design purpose-driven travel experiences that connect people to the richness of African culture and the deeper meaning that comes from exploring beyond the familiar.</span>
+        <span class="fr">Life Travels Company est la division voyage et expériences d'AltiMentum Global. Nous concevons des expériences de voyage à dessein qui connectent les gens à la richesse de la culture africaine et au sens profond qui vient de l'exploration au-delà du familier.</span>
+      </p>
     </div>
     <div class="section-photo-wrap">
-      <!-- REPLACE: Travelers in Africa / Grand Lakes expedition -->
       <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80" alt="Africa travel">
     </div>
     <div class="vd-section">
-      <h3 class="vd-sh">Our Offerings</h3>
+      <h3 class="vd-sh"><span class="en">Our Offerings</span><span class="fr">Nos Offres</span></h3>
       <div class="services-grid">
-        <div class="srv"><div class="srv-t">African Heritage Tours</div><div class="srv-d">Immersive journeys through Africa's history and landscapes</div></div>
-        <div class="srv"><div class="srv-t">Transformation Retreats</div><div class="srv-d">Travel combined with coaching for personal growth</div></div>
-        <div class="srv"><div class="srv-t">Corporate Travel</div><div class="srv-d">Executive retreats and incentive travel programs</div></div>
-        <div class="srv"><div class="srv-t">Ministry &amp; Mission Travel</div><div class="srv-d">Organized travel for church groups and outreach missions</div></div>
-        <div class="srv"><div class="srv-t">Grand Lakes Expeditions</div><div class="srv-d">Specialist tours of the Great Lakes region of Central Africa</div></div>
-        <div class="srv"><div class="srv-t">Global Pilgrimages</div><div class="srv-d">Spiritual and purpose-driven journeys worldwide</div></div>
+        <div class="srv"><div class="srv-t"><span class="en">African Heritage Tours</span><span class="fr">Tours du Patrimoine Africain</span></div><div class="srv-d"><span class="en">Immersive journeys through Africa's history</span><span class="fr">Voyages immersifs dans l'histoire de l'Afrique</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Transformation Retreats</span><span class="fr">Retraites de Transformation</span></div><div class="srv-d"><span class="en">Travel combined with coaching for growth</span><span class="fr">Voyage combiné au coaching pour la croissance</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Corporate Travel</span><span class="fr">Voyage d'Entreprise</span></div><div class="srv-d"><span class="en">Executive retreats and incentive travel</span><span class="fr">Retraites de dirigeants et voyages d'incitation</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Ministry &amp; Mission Travel</span><span class="fr">Voyage de Ministère &amp; Mission</span></div><div class="srv-d"><span class="en">Organized travel for church groups and missions</span><span class="fr">Voyages organisés pour groupes d'église et missions</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Grand Lakes Expeditions</span><span class="fr">Expéditions des Grands Lacs</span></div><div class="srv-d"><span class="en">Specialist tours of the Great Lakes region</span><span class="fr">Tours spécialisés de la région des Grands Lacs</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Global Pilgrimages</span><span class="fr">Pèlerinages Mondiaux</span></div><div class="srv-d"><span class="en">Spiritual and purpose-driven journeys worldwide</span><span class="fr">Voyages spirituels et à dessein dans le monde entier</span></div></div>
       </div>
     </div>
   </div>
-  <div class="vd-cta"><h3>Plan Your Journey</h3><p>Tell us where your life needs to go — we will design the experience.</p><button class="btn-gold" onclick="showPage('contact')">Plan My Journey ↗</button></div>
-  <footer class="footer" style="padding:2rem;"><div class="footer-logo">ALTIMENTUM</div><div class="footer-global">Global LLC · Life Travels Company</div><div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC</div></footer>
+  <div class="vd-cta">
+    <h3><span class="en">Plan Your Journey</span><span class="fr">Planifiez Votre Voyage</span></h3>
+    <p><span class="en">Tell us where your life needs to go.</span><span class="fr">Dites-nous où votre vie doit aller.</span></p>
+    <button class="btn-gold" onclick="showPage('contact')"><span class="en">Plan My Journey ↗</span><span class="fr">Planifier Mon Voyage ↗</span></button>
+  </div>
+  <footer class="footer" style="padding:2rem;"><div class="footer-logo">ALTIMENTUM</div><div class="footer-global">Global LLC · Life Travels</div><div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC</div></footer>
 </div>
 
 <!-- ════ INVESTIGATIONS PAGE ════ -->
 <div class="page" id="page-investigations">
   <div class="vd-hero">
-    <div class="vd-back-top"><button class="vd-back" onclick="showPage('home')">← Back to AltiMentum Global</button></div>
+    <div class="vd-back-top"><button class="vd-back" onclick="showPage('home')"><span class="en">← Back</span><span class="fr">← Retour</span></button></div>
     <div class="vd-hero-photo-wrap">
-      <!-- REPLACE: Intelligence / investigation / Africa map screens -->
-      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&q=80" alt="Investigations Background Intelligence">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&q=80" alt="Investigations">
       <div class="vd-hero-overlay"></div>
       <div class="vd-hero-text">
-        <div class="cls-bar"><div class="cls-dot"></div>Specialized Intelligence Division</div>
-        <div class="vd-badge inv-badge">Investigations &amp; Background Intelligence</div>
-        <h1 class="vd-title">Africa Background Intelligence</h1>
-        <div class="vd-tagline">"The truth about who you are hiring is already in the community. We know how to find it."</div>
+        <div class="cls-bar"><div class="cls-dot"></div><span class="en">Specialized Intelligence Division</span><span class="fr">Division Renseignement Spécialisé</span></div>
+        <div class="vd-badge inv-badge"><span class="en">Investigations &amp; Background Intelligence</span><span class="fr">Investigations &amp; Renseignement de Fond</span></div>
+        <h1 class="vd-title"><span class="en">Africa Background Intelligence</span><span class="fr">Renseignement de Fond Afrique</span></h1>
+        <div class="vd-tagline">
+          <span class="en">"The truth about who you are hiring is already in the community. We know how to find it."</span>
+          <span class="fr">« La vérité sur qui vous embauchez est déjà dans la communauté. Nous savons comment la trouver. »</span>
+        </div>
         <div class="inv-hero-stats">
-          <div class="ihs"><div class="ihs-n">10+</div><div class="ihs-l">Years screened</div></div>
-          <div class="ihs"><div class="ihs-n">54</div><div class="ihs-l">Countries covered</div></div>
-          <div class="ihs"><div class="ihs-n">100%</div><div class="ihs-l">Confidential</div></div>
-          <div class="ihs"><div class="ihs-n">0</div><div class="ihs-l">Compromises</div></div>
+          <div class="ihs"><div class="ihs-n">10+</div><div class="ihs-l"><span class="en">Years screened</span><span class="fr">Ans enquêtés</span></div></div>
+          <div class="ihs"><div class="ihs-n">54</div><div class="ihs-l"><span class="en">Countries</span><span class="fr">Pays</span></div></div>
+          <div class="ihs"><div class="ihs-n">100%</div><div class="ihs-l"><span class="en">Confidential</span><span class="fr">Confidentiel</span></div></div>
+          <div class="ihs"><div class="ihs-n">0</div><div class="ihs-l"><span class="en">Compromises</span><span class="fr">Compromis</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="vd-body">
+    <div class="vd-section">
+      <h3 class="vd-sh"><span class="en">Why Standard Background Checks Fail in Africa</span><span class="fr">Pourquoi les Vérifications Standard Échouent en Afrique</span></h3>
+      <p class="vd-p" style="margin-bottom:1.5rem;">
+        <span class="en">International organizations entering Africa routinely rely on digital databases and formal references — tools designed for Western environments. Africa is different. Records are incomplete. Digital footprints are thin. But the truth is not absent. <em style="color:var(--gold-lt);">It lives in the community.</em></span>
+        <span class="fr">Les organisations internationales entrant en Afrique s'appuient souvent sur des bases de données numériques et des références formelles — des outils conçus pour les environnements occidentaux. L'Afrique est différente. Les archives sont incomplètes. Les empreintes numériques sont minces. Mais la vérité n'est pas absente. <em style="color:var(--gold-lt);">Elle vit dans la communauté.</em></span>
+      </p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-title"><span class="en">Fragmented Record Systems</span><span class="fr">Systèmes d'Archives Fragmentés</span></div>
+          <div class="why-body"><span class="en">Many African nations lack centralized, digitized records. Standard database checks return incomplete results.</span><span class="fr">De nombreuses nations africaines manquent d'archives centralisées et numérisées. Les vérifications de bases de données renvoient des résultats incomplets.</span></div>
+        </div>
+        <div class="why-card">
+          <div class="why-title"><span class="en">High Mobility Across Borders</span><span class="fr">Grande Mobilité Transfrontalière</span></div>
+          <div class="why-body"><span class="en">Candidates frequently move across DRC, Rwanda, Uganda, Kenya and beyond. Tracing their history requires deep regional networks.</span><span class="fr">Les candidats se déplacent fréquemment entre la RDC, le Rwanda, l'Ouganda, le Kenya et au-delà. Retracer leur histoire nécessite des réseaux régionaux profonds.</span></div>
+        </div>
+        <div class="why-card">
+          <div class="why-title"><span class="en">Reputational &amp; Security Risk</span><span class="fr">Risque Réputationnel &amp; Sécuritaire</span></div>
+          <div class="why-body"><span class="en">Placing the wrong person in a sensitive role can expose your organization to fraud, espionage or physical threat.</span><span class="fr">Placer la mauvaise personne dans un rôle sensible peut exposer votre organisation à la fraude, à l'espionnage ou à une menace physique.</span></div>
+        </div>
+        <div class="why-card">
+          <div class="why-title"><span class="en">Community Knowledge Is the Intelligence</span><span class="fr">La Connaissance Communautaire est le Renseignement</span></div>
+          <div class="why-body"><span class="en">In Africa, a person's true character is known in their community. This intelligence is invisible to outsiders. We are insiders.</span><span class="fr">En Afrique, le vrai caractère d'une personne est connu dans sa communauté. Ce renseignement est invisible aux étrangers. Nous sommes des initiés.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-photo-wrap">
+      <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1200&q=80" alt="Community investigation">
+    </div>
+    <div class="diff-banner">
+      <div class="diff-quote">
+        <span class="en">"Any firm can run a name through a database.<br><strong>Only AltiMentum Global can walk into the neighborhood, the school, the former employer — and bring back the truth.</strong>"</span>
+        <span class="fr">« N'importe quelle entreprise peut faire une recherche dans une base de données.<br><strong>Seul AltiMentum Global peut aller dans le quartier, l'école, l'ancien employeur — et ramener la vérité.</strong> »</span>
+      </div>
+    </div>
+    <div class="vd-section" style="margin-top:3rem;">
+      <h3 class="vd-sh"><span class="en">Types of Investigation We Conduct</span><span class="fr">Types d'Investigations que Nous Menons</span></h3>
+      <div class="types-grid">
+        <div class="type-card"><div class="type-num">01</div><div class="type-name"><span class="en">Pre-Employment Deep Screening</span><span class="fr">Criblage Approfondi Pré-Emploi</span></div><div class="type-desc"><span class="en">Comprehensive background investigation for senior roles — going back 10+ years across all African jurisdictions.</span><span class="fr">Enquête de fond complète pour les postes de direction — remontant à 10+ ans dans toutes les juridictions africaines.</span></div></div>
+        <div class="type-card"><div class="type-num">02</div><div class="type-name"><span class="en">Community Character Investigation</span><span class="fr">Enquête de Caractère Communautaire</span></div><div class="type-desc"><span class="en">On-the-ground investigation drawing on testimonies from schools, neighborhoods, religious leaders and former colleagues.</span><span class="fr">Enquête sur le terrain s'appuyant sur les témoignages des écoles, quartiers, leaders religieux et anciens collègues.</span></div></div>
+        <div class="type-card"><div class="type-num">03</div><div class="type-name"><span class="en">Executive &amp; Leadership Vetting</span><span class="fr">Vérification des Dirigeants</span></div><div class="type-desc"><span class="en">Deep intelligence for C-suite candidates including financial background and integrity assessment.</span><span class="fr">Renseignement approfondi pour les candidats à des postes de direction incluant le contexte financier et l'évaluation de l'intégrité.</span></div></div>
+        <div class="type-card"><div class="type-num">04</div><div class="type-name"><span class="en">Security Personnel Screening</span><span class="fr">Criblage du Personnel de Sécurité</span></div><div class="type-desc"><span class="en">Specialized screening for guard forces and close protection operatives.</span><span class="fr">Criblage spécialisé pour les forces de garde et les opérateurs de protection rapprochée.</span></div></div>
+        <div class="type-card"><div class="type-num">05</div><div class="type-name"><span class="en">Partner &amp; Vendor Due Diligence</span><span class="fr">Due Diligence Partenaires &amp; Fournisseurs</span></div><div class="type-desc"><span class="en">Investigative due diligence on local business partners and NGO implementing partners.</span><span class="fr">Due diligence investigative sur les partenaires commerciaux locaux et les partenaires d'exécution d'ONG.</span></div></div>
+        <div class="type-card"><div class="type-num">06</div><div class="type-name"><span class="en">Humanitarian &amp; NGO Staff Vetting</span><span class="fr">Vérification du Personnel Humanitaire</span></div><div class="type-desc"><span class="en">Specialized investigations for NGOs hiring local staff for sensitive humanitarian operations.</span><span class="fr">Investigations spécialisées pour les ONG recrutant du personnel local pour des opérations humanitaires sensibles.</span></div></div>
+        <div class="type-card"><div class="type-num">07</div><div class="type-name"><span class="en">Fraud &amp; Misconduct Investigation</span><span class="fr">Enquête sur la Fraude &amp; Mauvaise Conduite</span></div><div class="type-desc"><span class="en">Post-incident investigation into suspected fraud, financial misconduct or abuse of position.</span><span class="fr">Enquête post-incident sur la fraude présumée, la mauvaise conduite financière ou l'abus de position.</span></div></div>
+        <div class="type-card"><div class="type-num">08</div><div class="type-name"><span class="en">Cross-Border Multi-Country Screening</span><span class="fr">Criblage Transfrontalier Multi-Pays</span></div><div class="type-desc"><span class="en">For candidates with history spanning multiple African nations — we follow the person wherever their history leads.</span><span class="fr">Pour les candidats avec un historique couvrant plusieurs nations africaines — nous suivons la personne où que son histoire mène.</span></div></div>
+      </div>
+    </div>
+    <div class="section-photo-wrap">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80" alt="Intelligence analysis">
+    </div>
+    <div class="vd-section">
+      <h3 class="vd-sh"><span class="en">The AltiMentum Deep Screening Process</span><span class="fr">Le Processus de Criblage Approfondi AltiMentum</span></h3>
+      <div class="method-grid">
+        <div>
+          <p style="font-size:10px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.25rem;"><span class="en">Investigation Timeline</span><span class="fr">Calendrier d'Investigation</span></p>
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase"><span class="en">Phase 1 · Days 1–3</span><span class="fr">Phase 1 · Jours 1–3</span></div><div class="tl-title"><span class="en">Intake &amp; Scope Definition</span><span class="fr">Réception &amp; Définition du Périmètre</span></div><div class="tl-desc"><span class="en">Client brief received. Subject history mapped. All information held under strict confidentiality.</span><span class="fr">Brief client reçu. Historique du sujet cartographié. Toutes les informations gardées sous stricte confidentialité.</span></div></div>
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase"><span class="en">Phase 2 · Days 4–10</span><span class="fr">Phase 2 · Jours 4–10</span></div><div class="tl-title"><span class="en">Document &amp; Record Verification</span><span class="fr">Vérification des Documents &amp; Archives</span></div><div class="tl-desc"><span class="en">Official documents verified — identity, education, employment — cross-checked with issuing institutions.</span><span class="fr">Documents officiels vérifiés — identité, éducation, emploi — recoupés avec les institutions émettrices.</span></div></div>
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase"><span class="en">Phase 3 · Days 7–18</span><span class="fr">Phase 3 · Jours 7–18</span></div><div class="tl-title"><span class="en">Community Field Investigation</span><span class="fr">Enquête de Terrain Communautaire</span></div><div class="tl-desc"><span class="en">On-the-ground interviews at schools, neighborhoods, former workplaces and religious institutions.</span><span class="fr">Entretiens sur le terrain dans les écoles, quartiers, anciens lieux de travail et institutions religieuses.</span></div></div>
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase"><span class="en">Phase 4 · Days 15–21</span><span class="fr">Phase 4 · Jours 15–21</span></div><div class="tl-title"><span class="en">Intelligence Synthesis &amp; Report</span><span class="fr">Synthèse du Renseignement &amp; Rapport</span></div><div class="tl-desc"><span class="en">All intelligence cross-analyzed. Final report with risk rating delivered securely.</span><span class="fr">Tout le renseignement analysé en croisé. Rapport final avec cote de risque livré de manière sécurisée.</span></div></div>
+            <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase"><span class="en">Phase 5 · On Request</span><span class="fr">Phase 5 · Sur Demande</span></div><div class="tl-title"><span class="en">Client Debrief &amp; Advisory</span><span class="fr">Débriefing Client &amp; Conseil</span></div><div class="tl-desc"><span class="en">Confidential debrief discussing findings and providing hiring or risk mitigation recommendations.</span><span class="fr">Débriefing confidentiel discutant des résultats et fournissant des recommandations d'embauche ou d'atténuation des risques.</span></div></div>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:10px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.25rem;"><span class="en">Community Intelligence Sources</span><span class="fr">Sources de Renseignement Communautaire</span></p>
+          <div>
+            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong><span class="en">Educational institutions</span><span class="fr">Institutions éducatives</span></strong> — <span class="en">Schools, teachers, administrators and peers.</span><span class="fr">Écoles, enseignants, administrateurs et pairs.</span></div></div>
+            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong><span class="en">Neighborhood &amp; residential community</span><span class="fr">Quartier &amp; communauté résidentielle</span></strong> — <span class="en">Long-term neighbors and community leaders.</span><span class="fr">Voisins de longue date et leaders communautaires.</span></div></div>
+            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong><span class="en">Current &amp; previous employers</span><span class="fr">Employeurs actuels &amp; anciens</span></strong> — <span class="en">Supervisors, HR personnel and exit circumstances.</span><span class="fr">Superviseurs, personnel RH et circonstances de départ.</span></div></div>
+            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong><span class="en">Religious &amp; civic institutions</span><span class="fr">Institutions religieuses &amp; civiques</span></strong> — <span class="en">Churches, mosques and community organizations.</span><span class="fr">Églises, mosquées et organisations communautaires.</span></div></div>
+            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong><span class="en">Professional networks</span><span class="fr">Réseaux professionnels</span></strong> — <span class="en">Industry peers and professional associations.</span><span class="fr">Pairs de l'industrie et associations professionnelles.</span></div></div>
+            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong><span class="en">Cross-border contacts</span><span class="fr">Contacts transfrontaliers</span></strong> — <span class="en">Regional networks across Grand Lakes and East Africa.</span><span class="fr">Réseaux régionaux à travers les Grands Lacs et l'Afrique de l'Est.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vd-section">
+      <h3 class="vd-sh"><span class="en">Who Cannot Afford to Get This Wrong</span><span class="fr">Qui Ne Peut Pas Se Permettre de Se Tromper</span></h3>
+      <div class="serve-grid">
+        <div class="serve-card"><div class="serve-icon">🏢</div><div class="serve-title"><span class="en">Multinational Corporations</span><span class="fr">Multinationales</span></div><div class="serve-desc"><span class="en">Companies hiring local senior management for high-trust roles in Africa.</span><span class="fr">Entreprises recrutant des cadres locaux supérieurs pour des rôles de haute confiance en Afrique.</span></div></div>
+        <div class="serve-card"><div class="serve-icon">🌐</div><div class="serve-title"><span class="en">International NGOs &amp; UN Agencies</span><span class="fr">ONG Internationales &amp; Agences ONU</span></div><div class="serve-desc"><span class="en">Humanitarian organizations where personnel integrity is mission-critical.</span><span class="fr">Organisations humanitaires où l'intégrité du personnel est critique pour la mission.</span></div></div>
+        <div class="serve-card"><div class="serve-icon">🏛️</div><div class="serve-title"><span class="en">Governments &amp; Embassies</span><span class="fr">Gouvernements &amp; Ambassades</span></div><div class="serve-desc"><span class="en">Foreign governments vetting locally-engaged staff in sensitive positions.</span><span class="fr">Gouvernements étrangers vérifiant le personnel local dans des postes sensibles.</span></div></div>
+        <div class="serve-card"><div class="serve-icon">💼</div><div class="serve-title"><span class="en">Private Equity &amp; Investors</span><span class="fr">Capital-Investissement &amp; Investisseurs</span></div><div class="serve-desc"><span class="en">Investment firms conducting due diligence on African management teams.</span><span class="fr">Sociétés d'investissement effectuant une due diligence sur les équipes de direction africaines.</span></div></div>
+        <div class="serve-card"><div class="serve-icon">🔒</div><div class="serve-title"><span class="en">Security Companies</span><span class="fr">Entreprises de Sécurité</span></div><div class="serve-desc"><span class="en">International firms vetting local guard force personnel.</span><span class="fr">Entreprises internationales vérifiant le personnel local de force de garde.</span></div></div>
+        <div class="serve-card"><div class="serve-icon">⛏️</div><div class="serve-title"><span class="en">Extractive &amp; Energy Sector</span><span class="fr">Secteur Extractif &amp; Énergétique</span></div><div class="serve-desc"><span class="en">Mining and energy companies screening local management.</span><span class="fr">Sociétés minières et énergétiques criblant la direction locale.</span></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="vd-cta">
+    <h3><span class="en">Know Before You Trust.</span><span class="fr">Savoir Avant de Faire Confiance.</span></h3>
+    <p><span class="en">Available to corporations, NGOs, governments and investment firms operating in or expanding into Africa. All inquiries handled with absolute discretion.</span><span class="fr">Disponible pour les entreprises, ONG, gouvernements et sociétés d'investissement opérant en Afrique ou s'y développant. Toutes les demandes traitées avec une discrétion absolue.</span></p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <button class="btn-gold" onclick="showPage('contact')"><span class="en">Request Confidential Consultation ↗</span><span class="fr">Demander une Consultation Confidentielle ↗</span></button>
+      <button class="btn-ghost" onclick="showPage('contact')"><span class="en">Download Service Overview ↗</span><span class="fr">Télécharger l'Aperçu des Services ↗</span></button>
+    </div>
+    <div class="conf-note">
+      <div style="font-size:16px;flex-shrink:0;margin-top:2px;">🔒</div>
+      <div class="conf-text">
+        <strong><span class="en">Confidentiality Guarantee</span><span class="fr">Garantie de Confidentialité</span>:</strong>
+        <span class="en">All inquiries, client identities and investigation mandates are held under strict non-disclosure. No subject is ever informed of an investigation without explicit client authorization.</span>
+        <span class="fr">Toutes les demandes, identités des clients et mandats d'investigation sont soumis à une stricte non-divulgation. Aucun sujet n'est jamais informé d'une investigation sans autorisation explicite du client.</span>
+      </div>
+    </div>
+  </div>
+  <footer class="footer" style="padding:2rem;"><div class="footer-logo">ALTIMENTUM</div><div class="footer-global">Global LLC · <span class="en">Investigations Division</span><span class="fr">Division Investigations</span></div><div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC</div></footer>
+</div>
+
+<!-- ════ CONTACT PAGE ════ -->
+<div class="page" id="page-contact">
+  <div class="photo-banner-wrap">
+    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400&q=80" alt="Connect">
+    <div class="photo-banner-overlay"></div>
+  </div>
+  <div class="contact-section">
+    <div class="contact-inner">
+      <div class="sec-eye"><span class="en">Get In Touch</span><span class="fr">Prenez Contact</span></div>
+      <h2 class="sec-h" style="text-align:center;"><span class="en">Connect With AltiMentum Global</span><span class="fr">Connectez-vous à AltiMentum Global</span></h2>
+      <p style="font-size:13px;color:var(--muted);line-height:1.9;margin-top:1rem;">
+        <span class="en">Whether you are an investor, a partner, a client or someone whose life needs transformation — AltiMentum Global has a door for you.</span>
+        <span class="fr">Que vous soyez un investisseur, un partenaire, un client ou quelqu'un dont la vie a besoin de transformation — AltiMentum Global a une porte pour vous.</span>
+      </p>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label><span class="en">Full Name</span><span class="fr">Nom Complet</span></label>
+            <input type="text" placeholder="Your full name / Votre nom complet">
+          </div>
+          <div class="form-group">
+            <label><span class="en">Email Address</span><span class="fr">Adresse Email</span></label>
+            <input type="email" placeholder="your@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label><span class="en">Organization</span><span class="fr">Organisation</span></label>
+            <input type="text" placeholder="Company / Entreprise (optional)">
+          </div>
+          <div class="form-group">
+            <label><span class="en">Inquiry Type</span><span class="fr">Type de Demande</span></label>
+            <select>
+              <option>Strategic Partnership / Partenariat Stratégique</option>
+              <option>Investment / Investissement</option>
+              <option>Security Services / Services de Sécurité (SRM)</option>
+              <option>Background Investigations / Investigations de Fond</option>
+              <option>Coaching &amp; Speaking / Coaching &amp; Conférences</option>
+              <option>NGO / Donor / Donateur ONG</option>
+              <option>Life Travels Booking / Réservation Life Travels</option>
+              <option>General / Général</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label><span class="en">Message</span><span class="fr">Message</span></label>
+          <textarea placeholder="Tell us about your inquiry... / Parlez-nous de votre demande..."></textarea>
+        </div>
+        <button class="form-submit">
+          <span class="en">Send Message — Rise With Momentum ↗</span>
+          <span class="fr">Envoyer — Rise With Momentum ↗</span>
+        </button>
+      </div>
+      <div class="contact-cards">
+        <div class="cc"><div class="cc-label">Corporate</div><div class="cc-val">altimentumglobal.com</div></div>
+        <div class="cc"><div class="cc-label">Coaching</div><div class="cc-val">danielmwendanga.com</div></div>
+        <div class="cc"><div class="cc-label"><span class="en">Security</span><span class="fr">Sécurité</span></div><div class="cc-val">srmgrandlakes.org</div></div>
+        <div class="cc"><div class="cc-label"><span class="en">Location</span><span class="fr">Localisation</span></div><div class="cc-val">Arlington, Virginia, USA</div></div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer" style="padding:2rem;">
+    <div class="footer-logo">ALTIMENTUM</div>
+    <div class="footer-global">Global LLC</div>
+    <div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC · All Rights Reserved / Tous Droits Réservés</div>
+  </footer>
+</div>
+
+
+<!-- ════ BHA PAGE ════ -->
+<div class="page" id="page-bha">
+  <div class="vd-hero">
+    <div class="vd-back-top"><button class="vd-back" onclick="showPage('home')"><span class="en">← Back to AltiMentum Global</span><span class="fr">← Retour à AltiMentum Global</span></button></div>
+    <div class="vd-hero-photo-wrap">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1400&q=80" alt="Broken Hearts Association">
+      <div class="vd-hero-overlay"></div>
+      <div class="vd-hero-text">
+        <div class="vd-badge" style="background:rgba(139,60,120,0.2);border-color:rgba(139,60,120,0.5);color:#E8A0D8;">
+          <span class="en">Community Division</span><span class="fr">Division Communautaire</span>
+        </div>
+        <h1 class="vd-title">
+          <span class="en">Broken Hearts Association</span>
+          <span class="fr">Association des Cœurs Brisés</span>
+        </h1>
+        <div class="vd-tagline">
+          <span class="en">"You are not alone. Your story deserves to be heard. Hope is not over."</span>
+          <span class="fr">« Vous n'êtes pas seul. Votre histoire mérite d'être entendue. L'espoir n'est pas terminé. »</span>
         </div>
       </div>
     </div>
   </div>
 
   <div class="vd-body">
+
+    <!-- WHAT IS BHA -->
     <div class="vd-section">
-      <h3 class="vd-sh">Why Standard Background Checks Fail in Africa</h3>
-      <p class="vd-p" style="margin-bottom:1.5rem;">International organizations entering Africa routinely rely on digital databases and formal references — tools designed for Western environments. Africa is different. Records are incomplete. Digital footprints are thin. But the truth is not absent. <em style="color:var(--gold-lt);">It lives in the community.</em></p>
-      <div class="why-grid">
-        <div class="why-card"><div class="why-title">Fragmented Record Systems</div><div class="why-body">Many African nations lack centralized, digitized employment or criminal records. Standard database checks return incomplete results.</div></div>
-        <div class="why-card"><div class="why-title">High Mobility Across Borders</div><div class="why-body">Candidates frequently move across DRC, Rwanda, Uganda, Kenya and beyond. Tracing their history requires deep regional networks — not internet searches.</div></div>
-        <div class="why-card"><div class="why-title">Reputational &amp; Security Risk</div><div class="why-body">Placing the wrong person in a sensitive role — security, finance, or humanitarian operations — can expose your organization to fraud, espionage or physical threat.</div></div>
-        <div class="why-card"><div class="why-title">Community Knowledge Is the Intelligence</div><div class="why-body">In Africa, a person's true character is known in their community — their school, neighborhood, church, former colleagues. This intelligence is invisible to outsiders. We are insiders.</div></div>
+      <h3 class="vd-sh"><span class="en">What is BHA?</span><span class="fr">Qu'est-ce que la BHA ?</span></h3>
+      <p class="vd-p">
+        <span class="en">Broken Hearts Association is the heart division of AltiMentum Global. It is a free community movement built for people who are carrying the invisible weight of life's most painful moments — grief, loss, trauma, broken relationships, professional collapse, displacement, exile, identity crisis, loneliness. People who have been through something that broke them and who need, above all, to be heard.<br><br>BHA is not therapy. Not a religious institution. Not charity. It is a human community — with structured peer support, free hope-building resources, and a clear pathway from pain toward reconstruction and purpose.</span>
+        <span class="fr">L'Association des Cœurs Brisés est la division du cœur d'AltiMentum Global. C'est un mouvement communautaire gratuit construit pour les personnes qui portent le poids invisible des moments les plus douloureux de la vie — deuil, perte, traumatisme, relations brisées, effondrement professionnel, déplacement, exil, crise d'identité, solitude. Des personnes qui ont traversé quelque chose qui les a brisées et qui ont besoin, avant tout, d'être entendues.<br><br>La BHA n'est pas une thérapie. Pas une institution religieuse. Pas une charité. C'est une communauté humaine — avec un soutien par les pairs structuré, des ressources gratuites de construction de l'espoir, et un chemin clair de la douleur vers la reconstruction et la purpose.</span>
+      </p>
+    </div>
+
+    <!-- HERO PHOTO -->
+    <div class="section-photo-wrap">
+      <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=1200&q=80" alt="Community support">
+    </div>
+
+    <!-- WHO BHA IS FOR -->
+    <div class="vd-section">
+      <h3 class="vd-sh"><span class="en">Who BHA Is For</span><span class="fr">À Qui s'adresse la BHA</span></h3>
+      <p class="vd-p" style="margin-bottom:1.5rem;">
+        <span class="en">BHA is for anyone who has experienced pain that left a mark — regardless of background, nationality, religion or circumstance. You do not need to be in crisis to belong. You only need to be human.</span>
+        <span class="fr">La BHA est pour quiconque a vécu une douleur qui a laissé une marque — quelle que soit son origine, sa nationalité, sa religion ou ses circonstances. Vous n'avez pas besoin d'être en crise pour appartenir. Vous avez seulement besoin d'être humain.</span>
+      </p>
+      <div class="services-grid">
+        <div class="srv"><div class="srv-t"><span class="en">Grief &amp; Loss</span><span class="fr">Deuil &amp; Perte</span></div><div class="srv-d"><span class="en">Loss of a loved one, a marriage, a career, a home or a dream</span><span class="fr">Perte d'un être cher, d'un mariage, d'une carrière, d'un foyer ou d'un rêve</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Trauma &amp; Abuse</span><span class="fr">Traumatisme &amp; Abus</span></div><div class="srv-d"><span class="en">Survivors of emotional, physical or circumstantial trauma seeking a path forward</span><span class="fr">Survivants d'un traumatisme émotionnel, physique ou circonstanciel cherchant une voie vers l'avant</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Displacement &amp; Exile</span><span class="fr">Déplacement &amp; Exil</span></div><div class="srv-d"><span class="en">Refugees, migrants and diaspora communities navigating identity and belonging</span><span class="fr">Réfugiés, migrants et communautés de la diaspora naviguant l'identité et l'appartenance</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Broken Relationships</span><span class="fr">Relations Brisées</span></div><div class="srv-d"><span class="en">Divorce, estrangement, betrayal and the weight of fractured family bonds</span><span class="fr">Divorce, éloignement, trahison et le poids des liens familiaux fracturés</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Professional Collapse</span><span class="fr">Effondrement Professionnel</span></div><div class="srv-d"><span class="en">Job loss, business failure, financial crisis and the identity wounds they leave</span><span class="fr">Perte d'emploi, échec commercial, crise financière et les blessures identitaires qu'ils laissent</span></div></div>
+        <div class="srv"><div class="srv-t"><span class="en">Loneliness &amp; Isolation</span><span class="fr">Solitude &amp; Isolement</span></div><div class="srv-d"><span class="en">The silent suffering of those who feel unseen, unheard and disconnected</span><span class="fr">La souffrance silencieuse de ceux qui se sentent invisibles, non entendus et déconnectés</span></div></div>
       </div>
     </div>
 
-    <!-- Community investigation photo -->
-    <div class="section-photo-wrap">
-      <!-- REPLACE: African professional conducting community interview -->
-      <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1200&q=80" alt="Community investigation">
-    </div>
-
-    <div class="diff-banner">
-      <div class="diff-quote">"Any firm can run a name through a database.<br><strong>Only AltiMentum Global can walk into the neighborhood, the school, the former employer — and bring back the truth.</strong>"</div>
-      <p style="font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:0.75rem;">The AltiMentum Investigations Difference</p>
-    </div>
-
-    <div class="vd-section" style="margin-top:3rem;">
-      <h3 class="vd-sh">Types of Investigation We Conduct</h3>
-      <div class="types-grid">
-        <div class="type-card"><div class="type-num">01</div><div class="type-name">Pre-Employment Deep Screening</div><div class="type-desc">Comprehensive background investigation for senior roles. Covers employment history, conduct, integrity and character — going back 10+ years across all African jurisdictions.</div></div>
-        <div class="type-card"><div class="type-num">02</div><div class="type-name">Community Character Investigation</div><div class="type-desc">On-the-ground field investigation drawing on testimonies from schools, neighborhoods, religious leaders, community elders and former colleagues.</div></div>
-        <div class="type-card"><div class="type-num">03</div><div class="type-name">Executive &amp; Leadership Vetting</div><div class="type-desc">Deep intelligence for C-suite and directorial candidates. Includes financial background, political affiliations and integrity assessment across a full career history.</div></div>
-        <div class="type-card"><div class="type-num">04</div><div class="type-name">Security Personnel Screening</div><div class="type-desc">Specialized screening for guard forces and close protection operatives. Assesses loyalty, behavioral history and any links to criminal or armed groups.</div></div>
-        <div class="type-card"><div class="type-num">05</div><div class="type-name">Partner &amp; Vendor Due Diligence</div><div class="type-desc">Investigative due diligence on local business partners, subcontractors and NGO implementing partners before entering contractual relationships.</div></div>
-        <div class="type-card"><div class="type-num">06</div><div class="type-name">Humanitarian &amp; NGO Staff Vetting</div><div class="type-desc">Specialized investigations for NGOs hiring local staff for sensitive humanitarian operations in conflict-affected environments across Africa.</div></div>
-        <div class="type-card"><div class="type-num">07</div><div class="type-name">Fraud &amp; Misconduct Investigation</div><div class="type-desc">Post-incident investigation into suspected fraud, financial misconduct or abuse of position. Delivered with full chain-of-evidence integrity.</div></div>
-        <div class="type-card"><div class="type-num">08</div><div class="type-name">Cross-Border Multi-Country Screening</div><div class="type-desc">For candidates with history spanning multiple African nations — our regional networks follow the person wherever their history leads.</div></div>
-      </div>
-    </div>
-
-    <!-- Intelligence document photo -->
-    <div class="section-photo-wrap">
-      <!-- REPLACE: Intelligence report / documents on desk / Africa map -->
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80" alt="Intelligence analysis">
-    </div>
-
+    <!-- WHAT BHA OFFERS -->
     <div class="vd-section">
-      <h3 class="vd-sh">The AltiMentum Deep Screening Process</h3>
-      <p class="vd-p" style="margin-bottom:1.5rem;">Our methodology: <em style="color:var(--gold-lt);">go where the truth lives.</em> We do not rely on what a person chooses to disclose. We go to the sources that have known them over time.</p>
-      <div class="method-grid">
-        <div>
-          <p style="font-size:10px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.25rem;">Investigation Timeline</p>
-          <div class="timeline">
-            <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Phase 1 · Days 1–3</div><div class="tl-title">Intake &amp; Scope Definition</div><div class="tl-desc">Client brief received. Subject history mapped. All information held under strict confidentiality.</div></div>
-            <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Phase 2 · Days 4–10</div><div class="tl-title">Document &amp; Record Verification</div><div class="tl-desc">Official documents verified — identity, education, employment, licenses — cross-checked directly with issuing institutions.</div></div>
-            <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Phase 3 · Days 7–18</div><div class="tl-title">Community Field Investigation</div><div class="tl-desc">On-the-ground interviews at schools, neighborhoods, former workplaces and religious institutions. Public testimonies gathered from those who have known the subject over time.</div></div>
-            <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Phase 4 · Days 15–21</div><div class="tl-title">Intelligence Synthesis &amp; Report</div><div class="tl-desc">All intelligence cross-analyzed. Final report with risk rating delivered securely to the client.</div></div>
-            <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Phase 5 · On Request</div><div class="tl-title">Client Debrief &amp; Advisory</div><div class="tl-desc">Confidential debrief discussing findings and providing hiring or risk mitigation recommendations.</div></div>
-          </div>
-        </div>
-        <div>
-          <p style="font-size:10px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.25rem;">Community Intelligence Sources</p>
+      <h3 class="vd-sh"><span class="en">What BHA Offers — All Free</span><span class="fr">Ce que la BHA Offre — Tout Gratuit</span></h3>
+
+      <!-- Bullet points styled as highlighted rows -->
+      <div style="display:flex;flex-direction:column;gap:0;margin-top:1rem;">
+
+        <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.25rem 1.5rem;background:var(--surface);border-left:3px solid #9B59B6;margin-bottom:1px;">
+          <div style="font-size:18px;flex-shrink:0;margin-top:2px;">👂</div>
           <div>
-            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong>Educational institutions</strong> — Schools, teachers, administrators, peers and institution records.</div></div>
-            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong>Neighborhood &amp; residential community</strong> — Long-term neighbors, community leaders and local authorities.</div></div>
-            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong>Current &amp; previous employers</strong> — Direct supervisors, HR personnel and exit circumstances — verified independently.</div></div>
-            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong>Religious &amp; civic institutions</strong> — Churches, mosques, community organizations and civic leadership networks.</div></div>
-            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong>Professional networks</strong> — Industry peers, professional associations and sector-specific contacts.</div></div>
-            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong>Open source &amp; media</strong> — Public records, local media archives, court records and official gazettes.</div></div>
-            <div class="src-item"><div class="src-dot"></div><div class="src-text"><strong>Cross-border contacts</strong> — Regional networks across Grand Lakes, East Africa and the broader continent.</div></div>
+            <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;font-family:'Cormorant Garamond',serif;">
+              <span class="en">Safe spaces to be heard</span><span class="fr">Espaces sûrs pour être entendu</span>
+            </div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">
+              <span class="en">Judgment-free community circles where people share their stories, their pain and their journey — in English and French, online and in person.</span>
+              <span class="fr">Des cercles communautaires sans jugement où les gens partagent leurs histoires, leur douleur et leur parcours — en anglais et en français, en ligne et en personne.</span>
+            </div>
           </div>
         </div>
+
+        <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.25rem 1.5rem;background:var(--surface);border-left:3px solid #9B59B6;margin-bottom:1px;">
+          <div style="font-size:18px;flex-shrink:0;margin-top:2px;">📚</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;font-family:'Cormorant Garamond',serif;">
+              <span class="en">Free hope-building resources</span><span class="fr">Ressources gratuites de construction de l'espoir</span>
+            </div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">
+              <span class="en">Audio messages, written reflections, video testimonies and practical tools — freely accessible to anyone, anywhere, at any time.</span>
+              <span class="fr">Messages audio, réflexions écrites, témoignages vidéo et outils pratiques — librement accessibles à tous, partout, à tout moment.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.25rem 1.5rem;background:var(--surface);border-left:3px solid #9B59B6;margin-bottom:1px;">
+          <div style="font-size:18px;flex-shrink:0;margin-top:2px;">🤝</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;font-family:'Cormorant Garamond',serif;">
+              <span class="en">Peer support circles</span><span class="fr">Cercles de soutien par les pairs</span>
+            </div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">
+              <span class="en">Small, intimate groups of people walking similar roads — supporting each other through shared understanding, lived experience and genuine human connection.</span>
+              <span class="fr">De petits groupes intimes de personnes marchant sur des routes similaires — se soutenant mutuellement à travers la compréhension partagée, l'expérience vécue et la véritable connexion humaine.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.25rem 1.5rem;background:var(--surface);border-left:3px solid #9B59B6;margin-bottom:1px;">
+          <div style="font-size:18px;flex-shrink:0;margin-top:2px;">🌱</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;font-family:'Cormorant Garamond',serif;">
+              <span class="en">A pathway from pain to reconstruction</span><span class="fr">Un chemin de la douleur à la reconstruction</span>
+            </div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">
+              <span class="en">BHA connects naturally to Daniel Mwendanga's Strategic Reconstruction coaching — for those ready to move from healing into purpose, momentum and a rebuilt life.</span>
+              <span class="fr">La BHA se connecte naturellement au coaching de Reconstruction Stratégique de Daniel Mwendanga — pour ceux prêts à passer de la guérison à la purpose, l'élan et une vie reconstruite.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.25rem 1.5rem;background:var(--surface);border-left:3px solid #9B59B6;margin-bottom:1px;">
+          <div style="font-size:18px;flex-shrink:0;margin-top:2px;">🌍</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;font-family:'Cormorant Garamond',serif;">
+              <span class="en">Multilingual — English &amp; French</span><span class="fr">Multilingue — Anglais &amp; Français</span>
+            </div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">
+              <span class="en">Reaching the African diaspora, the Grand Lakes region, Francophone communities and anyone across the world who needs a place to belong.</span>
+              <span class="fr">Atteignant la diaspora africaine, la région des Grands Lacs, les communautés francophones et toute personne dans le monde qui a besoin d'un endroit où appartenir.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.25rem 1.5rem;background:var(--surface);border-left:3px solid #9B59B6;margin-bottom:1px;">
+          <div style="font-size:18px;flex-shrink:0;margin-top:2px;">🎙️</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;font-family:'Cormorant Garamond',serif;">
+              <span class="en">Testimony gatherings &amp; healing events</span><span class="fr">Rassemblements de témoignages &amp; événements de guérison</span>
+            </div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">
+              <span class="en">Online and in-person events where people share their testimonies, experience hope together and discover they are not alone in their journey.</span>
+              <span class="fr">Des événements en ligne et en personne où les gens partagent leurs témoignages, vivent l'espoir ensemble et découvrent qu'ils ne sont pas seuls dans leur parcours.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.25rem 1.5rem;background:var(--surface);border-left:3px solid #9B59B6;">
+          <div style="font-size:18px;flex-shrink:0;margin-top:2px;">🚪</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;font-family:'Cormorant Garamond',serif;">
+              <span class="en">Open to all — no conditions</span><span class="fr">Ouvert à tous — sans conditions</span>
+            </div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">
+              <span class="en">BHA welcomes everyone regardless of background, religion, nationality, age or circumstance. The only requirement is that you come as you are.</span>
+              <span class="fr">La BHA accueille tout le monde quelle que soit son origine, sa religion, sa nationalité, son âge ou ses circonstances. La seule exigence est de venir tel que vous êtes.</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="vd-section">
-      <h3 class="vd-sh">Who Cannot Afford to Get This Wrong</h3>
-      <div class="serve-grid">
-        <div class="serve-card"><div class="serve-icon">🏢</div><div class="serve-title">Multinational Corporations</div><div class="serve-desc">Companies hiring local senior management and operational staff for high-trust roles in Africa.</div></div>
-        <div class="serve-card"><div class="serve-icon">🌐</div><div class="serve-title">International NGOs &amp; UN Agencies</div><div class="serve-desc">Humanitarian organizations deploying staff in conflict-affected environments where integrity is mission-critical.</div></div>
-        <div class="serve-card"><div class="serve-icon">🏛️</div><div class="serve-title">Governments &amp; Embassies</div><div class="serve-desc">Foreign governments vetting locally-engaged staff and contractors in sensitive positions.</div></div>
-        <div class="serve-card"><div class="serve-icon">💼</div><div class="serve-title">Private Equity &amp; Investors</div><div class="serve-desc">Investment firms conducting due diligence on African management teams before committing capital.</div></div>
-        <div class="serve-card"><div class="serve-icon">🔒</div><div class="serve-title">Security Companies</div><div class="serve-desc">International firms vetting local guard force personnel for contracts in high-risk environments.</div></div>
-        <div class="serve-card"><div class="serve-icon">⛏️</div><div class="serve-title">Extractive &amp; Energy Sector</div><div class="serve-desc">Mining and energy companies screening local management in remote African locations.</div></div>
-      </div>
+    <!-- SECOND PHOTO -->
+    <div class="section-photo-wrap">
+      <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=1200&q=80" alt="Hope and community">
     </div>
 
+    <!-- FOUNDER NOTE -->
     <div class="vd-section">
-      <h3 class="vd-sh">What Makes Us the Non-Avoidable Partner</h3>
-      <div class="adv-grid">
-        <div class="adv-item"><div class="adv-num">01</div><div><div class="adv-title">Grand Lakes Region Depth</div><div class="adv-desc">Our founder's operational background in DRC, Rwanda, Burundi, Uganda gives us intelligence networks that international firms cannot replicate. We are insiders.</div></div></div>
-        <div class="adv-item"><div class="adv-num">02</div><div><div class="adv-title">Beyond 10 Years — No Artificial Limit</div><div class="adv-desc">We do not cap investigations at 5–7 years. Where relevant, we go back as far as the subject's adult history requires.</div></div></div>
-        <div class="adv-item"><div class="adv-num">03</div><div><div class="adv-title">Community Testimony Methodology</div><div class="adv-desc">Our field investigators are trained to elicit honest testimony using culturally appropriate methods. We understand what people will say — and how to create the conditions for truth.</div></div></div>
-        <div class="adv-item"><div class="adv-num">04</div><div><div class="adv-title">Integrated Security Intelligence</div><div class="adv-desc">As part of SRM, background investigations benefit from active security intelligence networks across the continent.</div></div></div>
-        <div class="adv-item"><div class="adv-num">05</div><div><div class="adv-title">Absolute Confidentiality</div><div class="adv-desc">Every investigation is conducted under strict non-disclosure. Findings are delivered through encrypted channels. We have never compromised a client's identity.</div></div></div>
-        <div class="adv-item"><div class="adv-num">06</div><div><div class="adv-title">Cross-Sector Expertise</div><div class="adv-desc">Deep experience in security, humanitarian operations, peacebuilding and executive coaching informs every investigation we conduct.</div></div></div>
-      </div>
+      <h3 class="vd-sh"><span class="en">Why Daniel Built BHA</span><span class="fr">Pourquoi Daniel a Construit la BHA</span></h3>
+      <p class="vd-p">
+        <span class="en">BHA was born from Daniel Mwendanga's own experience of knowing what it means to carry pain in silence — and his conviction that no person should walk that road alone. Having worked across Africa's most conflict-affected regions, having coached people through the deepest personal crises, and having lived through his own seasons of brokenness, Daniel built BHA as the most personal expression of AltiMentum Global's mission: to serve the whole person, not just their professional needs. The heart matters. The grief matters. You matter.</span>
+        <span class="fr">La BHA est née de l'expérience personnelle de Daniel Mwendanga de savoir ce que signifie porter la douleur en silence — et de sa conviction qu'aucune personne ne devrait marcher seule sur ce chemin. Ayant travaillé dans les régions les plus touchées par les conflits en Afrique, ayant coaché des personnes à travers les crises personnelles les plus profondes, et ayant vécu ses propres saisons de brisure, Daniel a construit la BHA comme l'expression la plus personnelle de la mission d'AltiMentum Global : servir la personne entière, pas seulement ses besoins professionnels. Le cœur compte. La douleur compte. Vous comptez.</span>
+      </p>
     </div>
+
   </div>
 
   <div class="vd-cta">
-    <h3>Know Before You Trust.</h3>
-    <p>Available to corporations, NGOs, governments and investment firms operating in or expanding into Africa.<br>All inquiries handled with absolute discretion.</p>
+    <h3>
+      <span class="en">You Are Not Alone.</span>
+      <span class="fr">Vous N'êtes Pas Seul.</span>
+    </h3>
+    <p>
+      <span class="en">BHA is a free resource. No registration fees. No conditions. Just a community ready to walk with you toward hope.</span>
+      <span class="fr">La BHA est une ressource gratuite. Pas de frais d'inscription. Pas de conditions. Juste une communauté prête à marcher avec vous vers l'espoir.</span>
+    </p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <button class="btn-gold" onclick="showPage('contact')">Request Confidential Consultation ↗</button>
-      <button class="btn-ghost" onclick="showPage('contact')">Download Service Overview ↗</button>
-    </div>
-    <div class="conf-note">
-      <div style="font-size:16px;flex-shrink:0;margin-top:2px;">🔒</div>
-      <div class="conf-text"><strong>Confidentiality Guarantee:</strong> All inquiries, client identities and investigation mandates are held under strict non-disclosure. No subject is ever informed of an investigation without explicit client authorization. All communications are encrypted.</div>
+      <button class="btn-gold" onclick="showPage('contact')">
+        <span class="en">Join the Community ↗</span><span class="fr">Rejoindre la Communauté ↗</span>
+      </button>
+      <button class="btn-ghost" onclick="showPage('contact')">
+        <span class="en">Share Your Story ↗</span><span class="fr">Partager Votre Histoire ↗</span>
+      </button>
     </div>
   </div>
-  <footer class="footer" style="padding:2rem;"><div class="footer-logo">ALTIMENTUM</div><div class="footer-global">Global LLC · Investigations Division</div><div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC · All Rights Reserved</div></footer>
+
+  <footer class="footer" style="padding:2rem;">
+    <div class="footer-logo">ALTIMENTUM</div>
+    <div class="footer-global">Global LLC · BHA — <span class="en">Broken Hearts Association</span><span class="fr">Association des Cœurs Brisés</span></div>
+    <div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC</div>
+  </footer>
 </div>
 
-<!-- ════ CONTACT PAGE ════ -->
-<div class="page" id="page-contact">
-  <!-- Contact hero photo -->
-  <div class="photo-banner-wrap">
-    <!-- REPLACE: Global connection / network / Africa city -->
-    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400&q=80" alt="Connect with AltiMentum Global">
-    <div class="photo-banner-overlay"></div>
-  </div>
-  <div class="contact-section">
-    <div class="contact-inner">
-      <div class="sec-eye">Get In Touch</div>
-      <h2 class="sec-h" style="text-align:center;">Connect With AltiMentum Global</h2>
-      <p style="font-size:13px;color:var(--muted);line-height:1.9;margin-top:1rem;">Whether you are an investor, a partner, a client or someone whose life needs transformation — AltiMentum Global has a door for you.</p>
-      <div class="contact-form">
-        <div class="form-row">
-          <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name"></div>
-          <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><label>Organization</label><input type="text" placeholder="Company or organization (optional)"></div>
-          <div class="form-group"><label>Inquiry Type</label>
-            <select>
-              <option>Strategic Partnership</option>
-              <option>Investment Opportunity</option>
-              <option>Security Services (SRM)</option>
-              <option>Background Investigations</option>
-              <option>Coaching &amp; Speaking</option>
-              <option>NGO / Donor Partnership</option>
-              <option>Life Travels Booking</option>
-              <option>General Inquiry</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group" style="margin-bottom:0;"><label>Message</label><textarea placeholder="Tell us about your inquiry, project or partnership idea..."></textarea></div>
-        <button class="form-submit">Send Message — Rise With Momentum ↗</button>
-      </div>
-      <div class="contact-cards">
-        <div class="cc"><div class="cc-label">Corporate</div><div class="cc-val">altimentumglobal.com</div></div>
-        <div class="cc"><div class="cc-label">Coaching</div><div class="cc-val">danielmwendanga.com</div></div>
-        <div class="cc"><div class="cc-label">Security</div><div class="cc-val">srmgrandlakes.org</div></div>
-        <div class="cc"><div class="cc-label">Location</div><div class="cc-val">Arlington, Virginia, USA</div></div>
-      </div>
-    </div>
-  </div>
-  <footer class="footer" style="padding:2rem;"><div class="footer-logo">ALTIMENTUM</div><div class="footer-global">Global LLC</div><div class="footer-copy" style="margin-top:1rem;">© 2026 AltiMentum Global LLC · All Rights Reserved</div></footer>
-</div>
 
 <script>
+// Language toggle
+function setLang(lang){
+  document.body.className = document.body.className.replace(/lang-\w+/,'') + ' lang-' + lang;
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
+  localStorage.setItem('altLang', lang);
+}
+
+// Page navigation
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-link').forEach(b=>b.classList.remove('active'));
@@ -862,9 +1202,16 @@ function showPage(id){
   window.scrollTo({top:0,behavior:'smooth'});
   document.getElementById('navLinks').classList.remove('open');
 }
+
 function toggleMenu(){
   document.getElementById('navLinks').classList.toggle('open');
 }
+
+// Remember language preference
+window.addEventListener('load', function(){
+  const saved = localStorage.getItem('altLang');
+  if(saved) setLang(saved);
+});
 </script>
 </body>
 </html>
