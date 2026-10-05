@@ -511,8 +511,36 @@ span.en,span.fr{display:none;}
 .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1rem;}
 .chip{border:1px solid var(--border);padding:.55rem 1.1rem;font-size:13px;color:var(--navy);background:#fff;}
 .chip.hl{border-color:var(--gold);}
+a.chip{text-decoration:none;cursor:pointer;transition:all .2s;}
+a.chip:hover{background:var(--navy);color:#fff;border-color:var(--navy);transform:translateY(-2px);}
+a.chip .pin{font-size:12px;margin-right:2px;}
 @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.svc-grid{grid-template-columns:1fr;}}
+
+/* ── FLAGSHIP / MAP / CTA ── */
+.flagship{background:var(--navy);color:#fff;padding:6rem 2rem;}
+.flagship .section-title{color:#fff;}
+.flagship .section-label{color:var(--gold-lt);}
+.fl-head{max-width:760px;margin:0 auto;text-align:center;}
+.fl-head .gold-accent{margin:1.5rem auto;}
+.fl-head p{color:#c9d3e6;line-height:1.85;font-size:15px;}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1100px;margin:3rem auto 0;}
+.cap{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-top:3px solid var(--gold);padding:1.5rem;}
+.cap-t{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:.5rem;}
+.cap-d{font-size:13px;line-height:1.7;color:#b8c4dc;}
+.principles{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1100px;margin:2.5rem auto 0;}
+.pr{padding:.5rem 1rem;border-left:2px solid var(--gold);}
+.pr-t{color:var(--gold-lt);font-weight:600;font-size:14px;}
+.pr-d{color:#b8c4dc;font-size:12px;margin-top:4px;line-height:1.6;}
+.map-panel{max-width:900px;margin:1.5rem auto 0;border:1px solid var(--border);}
+.map-panel iframe{display:block;width:100%;height:380px;border:0;}
+.map-open{display:block;text-align:center;font-size:12px;margin-top:.6rem;color:var(--navy);}
+button.chip{font-family:inherit;cursor:pointer;}
+button.chip:hover,button.chip.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.cta-band{background:var(--light);text-align:center;padding:4.5rem 2rem;}
+.cta-band p{max-width:620px;margin:1rem auto 1.75rem;color:var(--muted);line-height:1.8;font-size:15px;}
+@media(max-width:900px){.cap-grid{grid-template-columns:1fr 1fr;}.principles{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.cap-grid,.principles{grid-template-columns:1fr;}.map-panel iframe{height:300px;}}
 </style>
 </head>
 <body class="lang-en">
@@ -602,7 +630,33 @@ span.en,span.fr{display:none;}
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- FLAGSHIP: LOCALIZATION & M&E -->
+<section class="flagship" id="flagship">
+<div class="container">
+<div class="fl-head">
+<div class="section-label"><span class="en">Flagship Program</span><span class="fr">Programme phare</span></div>
+<h2 class="section-title"><span class="en">Localization, Monitoring &amp; Evaluation: Recipients First</span><span class="fr">Localisation, Suivi &amp; Évaluation : les bénéficiaires d'abord</span></h2>
+<div class="gold-accent"></div>
+<p><span class="en">This program is the engine behind everything AltiMentum Global delivers. We deploy experienced operations experts around the world to build strong, modern operating systems for development and humanitarian programs, adding practical AI features to the tools organizations already use, so they get high-quality results at low cost.</span><span class="fr">Ce programme est le moteur de tout ce que réalise AltiMentum Global. Nous déployons dans le monde entier des experts opérationnels pour bâtir des systèmes solides et modernes pour les programmes de développement et humanitaires, en ajoutant des fonctions d'IA aux outils existants, pour des résultats de qualité à faible coût.</span></p>
+</div>
+<div class="cap-grid">
+<div class="cap"><div class="cap-t"><span class="en">Human Resources</span><span class="fr">Ressources humaines</span></div><div class="cap-d"><span class="en">Recruitment, onboarding, staffing plans and HR policies for field teams.</span><span class="fr">Recrutement, intégration, plans de dotation et politiques RH pour les équipes terrain.</span></div></div>
+<div class="cap"><div class="cap-t"><span class="en">Finance &amp; Budgeting</span><span class="fr">Finances et budgétisation</span></div><div class="cap-d"><span class="en">Budget design and tracking, cash forecasting and strong financial controls.</span><span class="fr">Conception et suivi budgétaires, prévisions de trésorerie et solides contrôles financiers.</span></div></div>
+<div class="cap"><div class="cap-t"><span class="en">Reporting &amp; Donor Compliance</span><span class="fr">Rapportage et conformité bailleurs</span></div><div class="cap-d"><span class="en">Donor-ready reports, clear audit trails and compliance with funder requirements.</span><span class="fr">Rapports prêts pour les bailleurs, pistes d'audit claires et respect de leurs exigences.</span></div></div>
+<div class="cap"><div class="cap-t"><span class="en">Monitoring &amp; Evaluation</span><span class="fr">Suivi et évaluation</span></div><div class="cap-d"><span class="en">Indicators, data collection, learning reviews and independent evaluations.</span><span class="fr">Indicateurs, collecte de données, revues d'apprentissage et évaluations indépendantes.</span></div></div>
+<div class="cap"><div class="cap-t"><span class="en">Performance Review &amp; Team Management</span><span class="fr">Performance et gestion d'équipe</span></div><div class="cap-d"><span class="en">Performance frameworks, coaching and clear accountability for teams.</span><span class="fr">Cadres de performance, coaching et responsabilités claires pour les équipes.</span></div></div>
+<div class="cap"><div class="cap-t"><span class="en">AI-Enabled Operations</span><span class="fr">Opérations assistées par l'IA</span></div><div class="cap-d"><span class="en">AI features integrated into the systems organizations already use, automating routine tasks and reducing costs.</span><span class="fr">Des fonctions d'IA intégrées aux systèmes déjà utilisés par les organisations, pour automatiser les tâches courantes et réduire les coûts.</span></div></div>
+</div>
+<div class="principles">
+<div class="pr"><div class="pr-t"><span class="en">Recipients First</span><span class="fr">Les bénéficiaires d'abord</span></div><div class="pr-d"><span class="en">Every system is built around the people we serve.</span><span class="fr">Chaque système est conçu autour des personnes que nous servons.</span></div></div>
+<div class="pr"><div class="pr-t"><span class="en">Local Leadership</span><span class="fr">Leadership local</span></div><div class="pr-d"><span class="en">Strong local organizations lead and own results.</span><span class="fr">Des organisations locales fortes dirigent et portent les résultats.</span></div></div>
+<div class="pr"><div class="pr-t"><span class="en">Quality at Low Cost</span><span class="fr">Qualité à faible coût</span></div><div class="pr-d"><span class="en">Smart tools and lean teams, high-quality results.</span><span class="fr">Outils intelligents et équipes agiles, résultats de qualité.</span></div></div>
+<div class="pr"><div class="pr-t"><span class="en">Accountability</span><span class="fr">Redevabilité</span></div><div class="pr-d"><span class="en">Evidence, transparency and donor compliance.</span><span class="fr">Preuves, transparence et conformité aux exigences des bailleurs.</span></div></div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
   <section class="section-white" id="services">
     <div class="container">
       <div class="leaders-head">
@@ -620,7 +674,12 @@ span.en,span.fr{display:none;}
       </div>
       <div class="regions">
         <div class="section-label" style="text-align:center;"><span class="en">Where We Work</span><span class="fr">Où Nous Intervenons</span></div>
-        <div class="chips"><span class="chip hl"><span class="en">Democratic Republic of the Congo</span><span class="fr">RD Congo</span></span><span class="chip hl"><span class="en">Burundi</span><span class="fr">Burundi</span></span><span class="chip hl"><span class="en">Nigeria</span><span class="fr">Nigeria</span></span><span class="chip hl"><span class="en">Sierra Leone</span><span class="fr">Sierra Leone</span></span><span class="chip hl"><span class="en">Kenya</span><span class="fr">Kenya</span></span><span class="chip"><span class="en">More across Africa</span><span class="fr">Autres pays d'Afrique</span></span><span class="chip hl"><span class="en">Haiti</span><span class="fr">Haïti</span></span><span class="chip hl"><span class="en">South America</span><span class="fr">Amérique du Sud</span></span></div>
+        <div class="chips"><button type="button" class="chip hl" data-q="Democratic Republic of the Congo" data-z="5" onclick="showMap(this)"><span class="en">Democratic Republic of the Congo</span><span class="fr">RD Congo</span></button><button type="button" class="chip hl" data-q="Burundi" data-z="8" onclick="showMap(this)"><span class="en">Burundi</span><span class="fr">Burundi</span></button><button type="button" class="chip hl" data-q="Nigeria" data-z="6" onclick="showMap(this)"><span class="en">Nigeria</span><span class="fr">Nigeria</span></button><button type="button" class="chip hl" data-q="Sierra Leone" data-z="7" onclick="showMap(this)"><span class="en">Sierra Leone</span><span class="fr">Sierra Leone</span></button><button type="button" class="chip hl" data-q="Kenya" data-z="6" onclick="showMap(this)"><span class="en">Kenya</span><span class="fr">Kenya</span></button><button type="button" class="chip" data-q="Africa" data-z="3" onclick="showMap(this)"><span class="en">More across Africa</span><span class="fr">Autres pays d'Afrique</span></button><button type="button" class="chip hl" data-q="Haiti" data-z="7" onclick="showMap(this)"><span class="en">Haiti</span><span class="fr">Haïti</span></button><button type="button" class="chip hl" data-q="Guatemala" data-z="7" onclick="showMap(this)"><span class="en">Guatemala</span><span class="fr">Guatemala</span></button><button type="button" class="chip hl" data-q="South America" data-z="3" onclick="showMap(this)"><span class="en">South America</span><span class="fr">Amérique du Sud</span></button></div>
+<div class="map-panel"><iframe id="mapFrame" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Africa&z=3&output=embed"></iframe></div>
+<a id="mapOpen" class="map-open" href="https://www.google.com/maps/search/?api=1&query=Africa" target="_blank" rel="noopener"><span class="en">Open in Google Maps ↗</span><span class="fr">Ouvrir dans Google Maps ↗</span></a>
+<script>
+function showMap(b){document.querySelectorAll('.chips .chip').forEach(function(c){c.classList.remove('active');});b.classList.add('active');var q=b.getAttribute('data-q'),z=b.getAttribute('data-z');document.getElementById('mapFrame').src='https://maps.google.com/maps?q='+encodeURIComponent(q)+'&z='+z+'&output=embed';document.getElementById('mapOpen').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);}
+</script>
       </div>
     </div>
   </section>
@@ -698,8 +757,8 @@ span.en,span.fr{display:none;}
   <section class="section-off">
     <div class="container">
       <div class="divisions-intro">
-        <div class="section-label" style="text-align:center;"><span class="en">Our Divisions</span><span class="fr">Nos Divisions</span></div>
-        <h2 class="section-title" style="text-align:center;"><span class="en">Built for Purpose. Built to Last.</span><span class="fr">Construites avec Sens. Pour Durer.</span></h2>
+        <div class="section-label" style="text-align:center;"><span class="en">Our Divisions &amp; Global Partners</span><span class="fr">Nos Divisions et Partenaires Mondiaux</span></div>
+        <h2 class="section-title" style="text-align:center;"><span class="en">Partnering to Deliver Peace, Security and Resilience</span><span class="fr">S'unir pour la paix, la sécurité et la résilience</span></h2>
       </div>
       <div class="divisions-grid">
         <div class="division private-hidden" onclick="showPage('coaching')">
@@ -723,18 +782,18 @@ span.en,span.fr{display:none;}
         <div class="division" onclick="showPage('ngo')">
           <div class="div-photo-wrap"><img class="div-photo" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="PSB NGO"></div>
           <div class="div-body">
-            <div class="div-label"><span class="en">NGO</span><span class="fr">ONG</span></div>
-            <div class="div-name">Peace & Security Bridges</div>
-            <div class="div-desc"><span class="en">Humanitarian response, grassroots peacebuilding and security sector reform across Africa.</span><span class="fr">Réponse humanitaire, consolidation de la paix et réforme du secteur de sécurité.</span></div>
+            <div class="div-label"><span class="en">Global Partner</span><span class="fr">Partenaire mondial</span></div>
+<div class="div-name">Peace & Security Bridges</div>
+<div class="div-desc"><span class="en">Our partner for conflict resolution, peace and security program implementation in Guatemala, Haiti and across the African region.</span><span class="fr">Notre partenaire pour la résolution des conflits et la mise en œuvre de programmes de paix et de sécurité au Guatemala, en Haïti et dans toute la région africaine.</span></div>
             <div class="div-link"><span class="en">Learn more</span><span class="fr">En savoir plus</span></div>
           </div>
         </div>
         <div class="division" onclick="showPage('srm')">
           <div class="div-photo-wrap"><img class="div-photo" src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=600&q=80" alt="SRM"></div>
           <div class="div-body">
-            <div class="div-label"><span class="en">Security</span><span class="fr">Sécurité</span></div>
-            <div class="div-name">SRM Security Risk Monitoring</div>
-            <div class="div-desc"><span class="en">Physical security, access control, guard forces, close protection and intelligence, Grand Lakes & Africa.</span><span class="fr">Sécurité physique, contrôle d'accès, forces de garde, Grands Lacs & Afrique.</span></div>
+            <div class="div-label"><span class="en">Global Partner</span><span class="fr">Partenaire mondial</span></div>
+<div class="div-name">SRM Security Risk Monitoring</div>
+<div class="div-desc"><span class="en">Our partner for safety, security and risk management: assessment, analysis, research, and disaster and emergency response.</span><span class="fr">Notre partenaire pour la sûreté, la sécurité et la gestion des risques : évaluation, analyse, recherche, et réponse aux catastrophes et aux urgences.</span></div>
             <div class="div-link"><span class="en">Learn more</span><span class="fr">En savoir plus</span></div>
           </div>
         </div>
@@ -832,6 +891,16 @@ span.en,span.fr{display:none;}
       </div>
     </div>
   </section>
+
+<!-- CTA -->
+<section class="cta-band">
+<div class="container">
+<div class="section-label" style="text-align:center;"><span class="en">Work With Us</span><span class="fr">Travaillons ensemble</span></div>
+<h2 class="section-title" style="text-align:center;"><span class="en">Partner With AltiMentum Global</span><span class="fr">Devenez partenaire d'AltiMentum Global</span></h2>
+<p><span class="en">Donors, implementing partners, governments and organizations: let us design and deliver programs that put recipients first.</span><span class="fr">Bailleurs, partenaires de mise en œuvre, gouvernements et organisations : concevons et réalisons ensemble des programmes centrés sur les bénéficiaires.</span></p>
+<button type="button" class="btn-primary" onclick="showPage('contact')"><span class="en">Get in Touch</span><span class="fr">Nous contacter</span></button>
+</div>
+</section>
 
   <!-- FOOTER -->
   <footer class="footer">
