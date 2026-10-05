@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="dH_0UiPEc8m3JLvVNI8LeAls4j2EtBsCtuwK8-ECG0c"/>
-<link rel="icon" href="https://altimentumglobal.com" type="image/png" sizes="48x48">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AltiMentum Global",
-  "url": "https://altimentumglobal.com",
-  "logo": "https://altimentumglobal.com"
-}
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AltiMentum Global, Rise With Momentum</title>
 <meta name="description" content="One institution. Many missions. AltiMentum Global, built to serve the Worldwide Humanity.">
+<link rel="icon" href="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" type="image/png">
+<link rel="apple-touch-icon" href="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png">
+<link rel="canonical" href="https://altimentumglobal.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AltiMentum Global, Rise With Momentum">
+<meta property="og:description" content="One institution. Many missions. AltiMentum Global, built to serve the Worldwide Humanity.">
+<meta property="og:url" content="https://altimentumglobal.com/">
+<meta property="og:image" content="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png">
+<!-- GOOGLE VERIFICATION: paste the meta tag from Search Console on the next line -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"AltiMentum Global","url":"https://altimentumglobal.com/","logo":"https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png","founder":{"@type":"Person","name":"Daniel Mwendanga"}}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -476,6 +477,27 @@ span.en,span.fr{display:none;}
   .impact-stat{padding:1.25rem 1.5rem;}
   .vision-grid{grid-template-columns:repeat(2,1fr);}
 }
+
+/* ── ABOUT (no photo) + LEADERS CAROUSEL ── */
+.about-grid{grid-template-columns:1fr !important;max-width:820px;margin:0 auto;}
+.leaders-head{text-align:center;max-width:680px;margin:0 auto 3rem;}
+.leaders-head .gold-accent{margin:1.5rem auto;}
+.leaders-wrap{position:relative;max-width:1100px;margin:0 auto;}
+.leaders-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 12px;scrollbar-width:none;}
+.leaders-track::-webkit-scrollbar{display:none;}
+.leader-card{flex:0 0 calc((100% - 3rem) / 3);scroll-snap-align:start;background:#fff;border:1px solid var(--border);}
+.leader-photo{position:relative;height:340px;background:var(--light) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='38' r='16' fill='%23c3ccdb'/><path d='M18 92c0-18 14-30 32-30s32 12 32 30z' fill='%23c3ccdb'/></svg>") center/55% no-repeat;}
+.leader-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;background:var(--light);}
+.leader-info{padding:1.1rem 1.25rem;border-top:3px solid var(--gold);}
+.leader-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--navy);}
+.leader-role{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5;}
+.leader-arrow{position:absolute;top:170px;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);background:var(--navy);color:var(--gold-lt);font-size:20px;line-height:1;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;}
+.leader-arrow:hover{background:var(--gold);color:#fff;}
+.leader-arrow:focus-visible{outline:2px solid var(--gold-lt);outline-offset:2px;}
+.leader-prev{left:-22px;}
+.leader-next{right:-22px;}
+@media(max-width:900px){.leader-card{flex-basis:calc((100% - 1.5rem) / 2);}}
+@media(max-width:560px){.leader-card{flex-basis:82%;}.leader-prev{left:4px;}.leader-next{right:4px;}}
 </style>
 </head>
 <body class="lang-en">
@@ -546,13 +568,6 @@ span.en,span.fr{display:none;}
   <section class="section-white">
     <div class="container">
       <div class="about-grid">
-        <div class="about-photo">
-          <img src="https://i.ibb.co/j9HGmK5G/Headshot-Daniel-M2026.png" alt="Daniel Mwendanga" style="object-position:center top;">
-          <div class="about-photo-caption">
-            <strong>Daniel Mwendanga</strong>
-            <p><span class="en">Founder & CEO, AltiMentum Global</span><span class="fr">Fondateur & PDG, AltiMentum Global</span></p>
-          </div>
-        </div>
         <div>
           <div class="section-label"><span class="en">Who We Are</span><span class="fr">Qui Nous Sommes</span></div>
           <h2 class="section-title"><span class="en">The House of All Visions</span><span class="fr">La Maison de Toutes les Visions</span></h2>
@@ -571,6 +586,75 @@ span.en,span.fr{display:none;}
       </div>
     </div>
   </section>
+
+  <!-- LEADERS -->
+  <section class="section-off">
+    <div class="container">
+      <div class="leaders-head">
+        <div class="section-label"><span class="en">Leadership</span><span class="fr">Direction</span></div>
+        <h2 class="section-title"><span class="en">Our Leaders</span><span class="fr">Nos Leaders</span></h2>
+        <div class="gold-accent"></div>
+      </div>
+      <div class="leaders-wrap">
+        <button class="leader-arrow leader-prev" type="button" aria-label="Previous leader" onclick="scrollLeaders(-1)">&#8592;</button>
+        <button class="leader-arrow leader-next" type="button" aria-label="Next leader" onclick="scrollLeaders(1)">&#8594;</button>
+        <div class="leaders-track" id="leadersTrack">
+        <article class="leader-card">
+          <div class="leader-photo">
+            <!-- LEADER 1 PHOTO: add a line here like  <img src="PASTE-IMAGE-URL" alt="Leader name">  -->
+          </div>
+          <div class="leader-info">
+            <div class="leader-name">Leader 1 Name</div>
+            <div class="leader-role"><span class="en">Title / Role</span><span class="fr">Titre / Rôle</span></div>
+          </div>
+        </article>
+        <article class="leader-card">
+          <div class="leader-photo">
+            <!-- LEADER 2 PHOTO: add a line here like  <img src="PASTE-IMAGE-URL" alt="Leader name">  -->
+          </div>
+          <div class="leader-info">
+            <div class="leader-name">Leader 2 Name</div>
+            <div class="leader-role"><span class="en">Title / Role</span><span class="fr">Titre / Rôle</span></div>
+          </div>
+        </article>
+        <article class="leader-card">
+          <div class="leader-photo">
+            <!-- LEADER 3 PHOTO: add a line here like  <img src="PASTE-IMAGE-URL" alt="Leader name">  -->
+          </div>
+          <div class="leader-info">
+            <div class="leader-name">Leader 3 Name</div>
+            <div class="leader-role"><span class="en">Title / Role</span><span class="fr">Titre / Rôle</span></div>
+          </div>
+        </article>
+        <article class="leader-card">
+          <div class="leader-photo">
+            <!-- LEADER 4 PHOTO: add a line here like  <img src="PASTE-IMAGE-URL" alt="Leader name">  -->
+          </div>
+          <div class="leader-info">
+            <div class="leader-name">Leader 4 Name</div>
+            <div class="leader-role"><span class="en">Title / Role</span><span class="fr">Titre / Rôle</span></div>
+          </div>
+        </article>
+        <article class="leader-card">
+          <div class="leader-photo">
+            <!-- LEADER 5 PHOTO: add a line here like  <img src="PASTE-IMAGE-URL" alt="Leader name">  -->
+          </div>
+          <div class="leader-info">
+            <div class="leader-name">Leader 5 Name</div>
+            <div class="leader-role"><span class="en">Title / Role</span><span class="fr">Titre / Rôle</span></div>
+          </div>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function scrollLeaders(dir){
+      var t=document.getElementById('leadersTrack');
+      var c=t.querySelector('.leader-card');
+      t.scrollBy({left:dir*(c.offsetWidth+24),behavior:'smooth'});
+    }
+  </script>
 
   <!-- DIVISIONS -->
   <section class="section-off">
