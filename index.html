@@ -3,39 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
-<title>AltiMentum Global | Back Soon</title>
-<link rel="icon" href="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>AltiMentum Global, Rise With Momentum</title>
+<meta name="description" content="AltiMentum Global delivers international development and humanitarian projects, crisis preparedness and management, and risk and disaster response in Africa, Haiti and South America.">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="canonical" href="https://altimentumglobal.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AltiMentum Global, Rise With Momentum">
+<meta property="og:description" content="AltiMentum Global delivers international development and humanitarian projects, crisis preparedness and management, and risk and disaster response in Africa, Haiti and South America.">
+<meta property="og:url" content="https://altimentumglobal.com">
+<meta property="og:image" content="assets/logo.png">
+
+<!-- GOOGLE VERIFICATION -->
+<meta name="google-site-verification" content="dii_0UiPEcBm3JLvVNI8LeAls4j2EtBsCtuwK8-ECG0c" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"AltiMentum Global","description":"AltiMentum Global delivers international development and humanitarian projects, crisis preparedness and management, and risk and disaster response in Africa, Haiti and South America.","url":"https://altimentumglobal.com","logo":"https://altimentumglobal.comassets/logo.png"}
+</script>
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* ── RESET & BASE ── */
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{height:100%;}
-body{background:#14213d;color:#fff;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;}
-.box{max-width:640px;}
-.logo{max-width:220px;width:60%;margin:0 auto 2rem;display:block;}
-.bar{width:64px;height:3px;background:#c9a24d;margin:1.5rem auto;}
-h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,42px);font-weight:700;line-height:1.2;}
-p{color:#c9d3e6;line-height:1.8;font-size:16px;margin-top:.75rem;}
-.fr{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.15);}
-.fr h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;}
-a{color:#c9a24d;text-decoration:none;font-weight:500;}
-a:hover{text-decoration:underline;}
-small{display:block;margin-top:2.5rem;color:#8d9bb8;font-size:12px;letter-spacing:.05em;}
-</style>
-</head>
-<body>
-<div class="box">
-  <img class="logo" src="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" alt="AltiMentum Global">
-  <h1>We Are Updating Our Website</h1>
-  <div class="bar"></div>
-  <p>AltiMentum Global is currently improving its website. We will be back shortly with a refreshed experience.</p>
-  <p>For any urgent matter, please email us at <a href="mailto:info@altimentumglobal.com">info@altimentumglobal.com</a>.</p>
-  <div class="fr">
-    <h2>Mise à jour de notre site web</h2>
-    <p>AltiMentum Global améliore actuellement son site web. Nous serons de retour très bientôt.</p>
-    <p>Pour toute urgence, veuillez nous écrire à <a href="mailto:info@altimentumglobal.com">info@altimentumglobal.com</a>.</p>
-  </div>
-  <small>&copy; 2026 AltiMentum Global LLC</small>
-</div>
-</body>
-</html>
+html{scroll-behavior:smooth;}
+body{background:#fff;color:#1a2744;font-family:'Inter',sans-serif;overflow-x:hidden;}
+
+/* ── DESIGN TOKENS ── */
+:root{
+--navy:#1a2744;
+--navy-dk:#0f1a30;
+--blue:#1A3F8F;
+--gold:#C9921A;
+--gold-lt:#E8B84B;
+--white:#ffffff;
+--offwhite:#f7f8fa;
+--light:#eef1f7;
+--muted:#5a6a82;
+--border:#d8dfe8;
+--text:#1a2744;
+}
+
+/* ── NAV ── */
+.nav{
+position:fixed;top:0;left:0;right:0;z-index:100;
+background:rgba(10,16,32,0.96);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.08);
+height:68px;display:flex;align-items:center;
+justify-content:space-between;padding:0 2.5rem;
+}
+.nav-logo{cursor:pointer;display:flex;align-items:center;}
+.nav-logo img{height:44px;width:auto;}
+.nav-links{display:flex;align-items:center;gap:0;}
+.nav-link{
+background:none;border:none;
+color:rgba(255,255,255,0.65);
+font-family:'Inter',sans-serif;
+font-size:11px;font-weight:500;
+letter-spacing:1.2px;text-transform:uppercase;
+padding:0 0.9rem;height:68px;cursor:pointer;
+border-bottom:2px solid transparent;
+transition:all 0.2s;white-space:nowrap;
+}
+.nav-link:hover,.nav-link.active{color:#fff;border-bottom-color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:0.75rem;}
+.lang-toggle{display:flex;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;}
+.lang-btn{background:none;border:none;color:rgba(255,255,255,0.55);font-family:'Inter',sans-serif;font-size:11px;font-weight:600;padding:6px 11px;cursor:pointer;transition:all 0.2s;}
+.lang-btn.active{background:var(--gold);color:#fff;}
+.nav-cta{
+background:transparent;border:1px solid var(--gold);
+color:var(--gold);font-family:'Inter',sans-serif;
+font-size:11px;font-weight:600;letter-spacing:1.5px;
+text-transform:uppercase;padding:9px 18px;cursor:pointer;
+transition:all 0.2s;
+}
+.nav-cta:hover{background:var(--gold);color:#fff;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--gold);}
+
+/* ── PAGES ── */
+.page{display:none;padding-top:68px;}
+.page.active{display:block;}
+
+/* ── LANGUAGE ── */
+.en,.fr{display:none;}
+body.lang-en .en{display:block;}
+body.lang-en span.en{display:inline;}
+body.lang-fr .fr{display:block;}
+body.lang-fr span.fr{display:inline;}
+body.lang-en .fr{display:none;}
+body.lang-fr .en{display:none;}
+span.en,span.fr{display:none;}
+
+/* ── HERO ── */
+.hero{
+position:relative;height:calc(100vh - 68px);min-height:600px;
+display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.38);}
+.hero-bg-overlay{
+position:absolute;inset:0;
+background:rgba(10,16,32,0.65);
+}
+.hero-content{
+position:relative;z-index:1;
+width:100%;padding:0 2rem;
+}
+.hero-eyebrow{
+font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+letter-spacing:4px;text-transform:uppercase;color:var(--gold);
+margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;
+}
+.hero-eyebrow::after{content:'';flex:0 0 40px;height:1px;background:var(--gold);}
+.hero-title{
+font-family:'Playfair Display',serif;
+font-size:clamp(42px,5.5vw,72px);
+font-weight:700;color:#fff;
+line-height:1.08;margin-bottom:1.75rem;
+}
+.hero-title em{color:var(--gold-lt);font-style:normal;}
+.hero-body{
+font-size:16px;font-weight:300;
+color:rgba(255,255,255,0.72);
+line-height:1.8;max-width:560px;margin-bottom:2.5rem;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{
+background:var(--gold);color:#fff;
+font-family:'Inter',sans-serif;font-size:12px;
+font-weight:600;letter-spacing:2px;text-transform:uppercase;
+padding:14px 32px;border:none;cursor:pointer;transition:opacity 0.2s;
+}
+.btn-primary:hover{opacity:0.88;}
+.btn-secondary{
+background:transparent;color:#fff;
+font-family:'Inter',sans-serif;font-size:12px;
+font-weight:500;letter-spacing:2px;text-transform:uppercase;
+padding:14px 32px;border:1px solid rgba(255,255,255,0.35);
+cursor:pointer;transition:all 0.2s;
+}
+.btn-secondary:hover{border-color:#fff;}
+.hero-badge{display:none;}
+/* ALTIMENTUM hero title */
+.hero-main-title{
+font-family:'Playfair Display',serif;
+font-size:clamp(52px,9vw,96px);
+font-weight:900;color:#fff;
+letter-spacing:8px;text-transform:uppercase;
+line-height:1;margin-bottom:0.3rem;
+}
+.hero-subtitle{
+font-family:'Playfair Display',serif;
+font-size:clamp(14px,2.2vw,22px);
+font-weight:300;letter-spacing:16px;
+text-transform:uppercase;color:var(--gold);
+margin-bottom:1.5rem;
+}
+.hero-divider-line{
+width:100px;height:1px;
+background:linear-gradient(90deg,transparent,var(--gold),transparent);
+margin:0 auto 1.2rem;
+}
+.hero-tagline-top{
+font-size:10px;letter-spacing:4px;text-transform:uppercase;
+color:rgba(255,255,255,0.5);margin-bottom:1.5rem;
+}
+.hero-badge-bottom{
+margin-top:1.5rem;font-size:11px;letter-spacing:3px;
+text-transform:uppercase;color:rgba(255,255,255,0.4);
+}
+
+/* ── IMPACT BAR ── */
+.impact-bar{
+background:var(--navy);
+display:flex;justify-content:center;flex-wrap:wrap;
+}
+.impact-stat{
+padding:1.75rem 3rem;text-align:center;
+border-right:1px solid rgba(255,255,255,0.08);
+}
+.impact-stat:last-child{border-right:none;}
+.impact-n{
+font-family:'Playfair Display',serif;font-size:36px;
+font-weight:700;color:var(--gold-lt);line-height:1;
+}
+.impact-l{
+font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+color:rgba(255,255,255,0.45);margin-top:6px;
+}
+
+/* ── SECTION UTILITIES ── */
+.section-white{background:#fff;padding:6rem 2rem;}
+.section-off{background:var(--offwhite);padding:6rem 2rem;}
+.section-navy{background:var(--navy);padding:6rem 2rem;}
+.section-navy-dk{background:var(--navy-dk);padding:6rem 2rem;}
+.container{max-width:1100px;margin:0 auto;}
+.container-sm{max-width:780px;margin:0 auto;}
+
+.section-label{
+font-size:11px;font-weight:600;letter-spacing:4px;
+text-transform:uppercase;color:var(--gold);
+margin-bottom:1.25rem;
+}
+.section-label.on-dark{color:var(--gold-lt);}
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:clamp(32px,4vw,52px);
+font-weight:700;color:var(--navy);
+line-height:1.15;margin-bottom:1.25rem;
+}
+.section-title.on-dark{color:#fff;}
+.section-body{
+font-size:16px;font-weight:300;color:var(--muted);
+line-height:1.85;max-width:640px;
+}
+.section-body.on-dark{color:rgba(255,255,255,0.65);}
+.gold-accent{display:block;width:50px;height:3px;background:var(--gold);margin:1.5rem 0;}
+
+/* ── ABOUT SPLIT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.about-photo{position:relative;}
+.about-photo img{width:100%;height:520px;object-fit:cover;object-position:center top;display:block;}
+.about-photo-caption{
+position:absolute;bottom:0;left:0;right:0;
+background:var(--navy);padding:1.25rem 1.5rem;
+}
+.about-photo-caption p{font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:1px;}
+.about-photo-caption strong{color:var(--gold-lt);display:block;font-size:14px;font-family:'Playfair Display',serif;margin-bottom:3px;}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:2.5rem;background:var(--border);}
+.val{background:#fff;padding:1.25rem;border-top:3px solid transparent;transition:border-color 0.2s;}
+.val:hover{border-top-color:var(--gold);}
+.val-title{font-size:13px;font-weight:600;color:var(--navy);letter-spacing:0.5px;margin-bottom:4px;}
+.val-desc{font-size:12px;color:var(--muted);line-height:1.6;}
+
+/* ── DIVISIONS ── */
+.divisions-intro{text-align:center;margin-bottom:4rem;}
+.divisions-intro .section-body{margin:0 auto;}
+.divisions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.division{
+background:#fff;cursor:pointer;transition:all 0.25s;
+position:relative;overflow:hidden;
+}
+.division:hover{background:var(--offwhite);}
+.div-photo{width:100%;height:220px;object-fit:cover;display:block;transition:transform 0.4s;}
+.division:hover .div-photo{transform:scale(1.04);}
+.div-photo-wrap{overflow:hidden;}
+.div-body{padding:1.75rem 1.5rem;}
+.div-label{
