@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AltiMentum Global, Rise With Momentum</title>
 <meta name="description" content="AltiMentum Global delivers international development and humanitarian projects, crisis preparedness and management, and risk and disaster response in Africa, Haiti and South America.">
-<link rel="icon" href="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" type="image/png">
-<link rel="apple-touch-icon" href="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png">
+<link rel="icon" href="assets/altimentum-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/altimentum-logo.png">
 <link rel="canonical" href="https://altimentumglobal.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AltiMentum Global, Rise With Momentum">
 <meta property="og:description" content="AltiMentum Global delivers international development and humanitarian projects, crisis preparedness and management, and risk and disaster response in Africa, Haiti and South America.">
 <meta property="og:url" content="https://altimentumglobal.com/">
-<meta property="og:image" content="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png">
+<meta property="og:image" content="https://altimentumglobal.com/assets/altimentum-logo.png">
 <meta name="google-site-verification" content="dii_0UiPEcBm3JLvVNI8LeAls4j2EtBsCtuwK8-ECG0c" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"AltiMentum Global","description":"AltiMentum Global delivers international development and humanitarian projects, crisis preparedness and management, and risk and disaster response in Africa, Haiti and South America.","url":"https://altimentumglobal.com/","logo":"https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png"}
+{"@context":"https://schema.org","@type":"Organization","name":"AltiMentum Global","description":"AltiMentum Global delivers international development and humanitarian projects, crisis preparedness and management, and risk and disaster response in Africa, Haiti and South America.","url":"https://altimentumglobal.com/","logo":"https://altimentumglobal.com/assets/altimentum-logo.png"}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,6 +52,7 @@ body{background:#fff;color:#1a2744;font-family:'Inter',sans-serif;overflow-x:hid
 }
 .nav-logo{cursor:pointer;display:flex;align-items:center;}
 .nav-logo img{height:44px;width:auto;}
+.nav-logo img,.footer-logo img{background:#fff;border-radius:6px;padding:4px 10px;}
 .nav-links{display:flex;align-items:center;gap:0;}
 .nav-link{
   background:none;border:none;
@@ -542,7 +543,7 @@ button.chip:hover,button.chip.active{background:var(--navy);color:#fff;border-co
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-logo" onclick="showPage('home')">
-    <img src="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" alt="AltiMentum Global" style="height:44px;width:auto;">
+    <img src="assets/altimentum-logo.png" alt="AltiMentum Global" style="height:44px;width:auto;">
   </div>
   <div class="nav-links" id="navLinks">
     <button class="nav-link active" id="nav-home" onclick="showPage('home')"><span class="en">HOME</span><span class="fr">ACCUEIL</span></button>
@@ -873,7 +874,7 @@ function showMap(b){document.querySelectorAll('.chips .chip').forEach(function(c
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-logo"><img src="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" alt="AltiMentum Global" style="height:55px;width:auto;display:block;margin:0 auto 0.5rem;"></div>
+    <div class="footer-logo"><img src="assets/altimentum-logo.png" alt="AltiMentum Global" style="height:55px;width:auto;display:block;margin:0 auto 0.5rem;"></div>
     <div class="footer-tagline">Rise With Momentum</div>
     <div class="footer-links">
       <button class="footer-link" onclick="showPage('home')">HOME</button>
@@ -921,7 +922,7 @@ function showMap(b){document.querySelectorAll('.chips .chip').forEach(function(c
     </div>
   </div></div>
   <div class="vd-cta"><h3><span class="en">Begin Your Transformation</span><span class="fr">Commencez Votre Transformation</span></h3><p><span class="en">Ready to rise with momentum? Book a discovery session.</span><span class="fr">Prêt à s'élever? Réservez une session découverte.</span></p><button class="btn-primary" onclick="showPage('contact')"><span class="en">Book a Session</span><span class="fr">Réserver une Session</span></button></div>
-  <footer class="footer"><div class="footer-logo"><img src="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC</div></footer>
+  <footer class="footer"><div class="footer-logo"><img src="assets/altimentum-logo.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC</div></footer>
 </div>
 
 <!-- ════ BHA ════ -->
@@ -959,7 +960,7 @@ function showMap(b){document.querySelectorAll('.chips .chip').forEach(function(c
     </div>
   </div></div>
   <div class="vd-cta"><h3><span class="en">You Are Not Alone.</span><span class="fr">Vous N'êtes Pas Seul.</span></h3><p><span class="en">BHA is a free resource. No registration fees. No conditions. Just a community ready to walk with you toward hope.</span><span class="fr">La BHA est une ressource gratuite. Pas de frais. Pas de conditions. Juste une communauté.</span></p><div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;"><button class="btn-primary" onclick="showPage('contact')"><span class="en">Join the Community</span><span class="fr">Rejoindre la Communauté</span></button><button class="btn-secondary" onclick="showPage('contact')"><span class="en">Share Your Story</span><span class="fr">Partager Votre Histoire</span></button></div></div>
-  <footer class="footer"><div class="footer-logo"><img src="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC</div></footer>
+  <footer class="footer"><div class="footer-logo"><img src="assets/altimentum-logo.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC</div></footer>
 </div>
 
 <!-- ════ PSB NGO ════ -->
@@ -994,7 +995,7 @@ function showMap(b){document.querySelectorAll('.chips .chip').forEach(function(c
     </div>
   </div></div>
   <div class="vd-cta"><h3><span class="en">Partner for Peace</span><span class="fr">Partenaire pour la Paix</span></h3><p><span class="en">Donors, partners and volunteers are welcome.</span><span class="fr">Donateurs, partenaires et bénévoles bienvenus.</span></p><button class="btn-primary" onclick="showPage('contact')"><span class="en">Partner With Us</span><span class="fr">Devenir Partenaire</span></button></div>
-  <footer class="footer"><div class="footer-logo"><img src="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC</div></footer>
+  <footer class="footer"><div class="footer-logo"><img src="assets/altimentum-logo.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC</div></footer>
 </div>
 
 <!-- ════ SRM ════ -->
@@ -1028,7 +1029,7 @@ function showMap(b){document.querySelectorAll('.chips .chip').forEach(function(c
     </div>
   </div></div>
   <div class="vd-cta"><h3><span class="en">Secure Your Operations</span><span class="fr">Sécurisez Vos Opérations</span></h3><p><span class="en">Contact SRM for a confidential security consultation.</span><span class="fr">Contactez SRM pour une consultation confidentielle.</span></p><button class="btn-primary" onclick="showPage('contact')"><span class="en">Request Consultation</span><span class="fr">Demander une Consultation</span></button></div>
-  <footer class="footer"><div class="footer-logo"><img src="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC · srmgrandlakes.org</div></footer>
+  <footer class="footer"><div class="footer-logo"><img src="assets/altimentum-logo.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC · srmgrandlakes.org</div></footer>
 </div>
 
 <!-- ════ INVESTIGATIONS ════ -->
@@ -1124,7 +1125,7 @@ function showMap(b){document.querySelectorAll('.chips .chip').forEach(function(c
     </div>
   </div></div>
   <div class="vd-cta"><h3><span class="en">Know Before You Trust.</span><span class="fr">Savoir Avant de Faire Confiance.</span></h3><p><span class="en">Available to corporations, NGOs, governments and investors operating in Africa. All inquiries handled with absolute discretion.</span><span class="fr">Disponible pour les entreprises, ONG, gouvernements et investisseurs. Discrétion absolue garantie.</span></p><div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;"><button class="btn-primary" onclick="showPage('contact')"><span class="en">Request Confidential Consultation</span><span class="fr">Consultation Confidentielle</span></button></div></div>
-  <footer class="footer"><div class="footer-logo"><img src="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC</div></footer>
+  <footer class="footer"><div class="footer-logo"><img src="assets/altimentum-logo.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC</div></footer>
 </div>
 
 <!-- ════ TRAVELS ════ -->
@@ -1158,7 +1159,7 @@ function showMap(b){document.querySelectorAll('.chips .chip').forEach(function(c
     </div>
   </div></div>
   <div class="vd-cta"><h3><span class="en">Plan Your Journey</span><span class="fr">Planifiez Votre Voyage</span></h3><p><span class="en">Tell us where your life needs to go.</span><span class="fr">Dites-nous où votre vie doit aller.</span></p><button class="btn-primary" onclick="showPage('contact')"><span class="en">Plan My Journey</span><span class="fr">Planifier Mon Voyage</span></button></div>
-  <footer class="footer"><div class="footer-logo"><img src="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC</div></footer>
+  <footer class="footer"><div class="footer-logo"><img src="assets/altimentum-logo.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC</div></footer>
 </div>
 
 <!-- ════ CONTACT ════ -->
@@ -1208,7 +1209,7 @@ function showMap(b){document.querySelectorAll('.chips .chip').forEach(function(c
       </div>
     </div>
   </div>
-  <footer class="footer"><div class="footer-logo"><img src="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC · All Rights Reserved</div></footer>
+  <footer class="footer"><div class="footer-logo"><img src="assets/altimentum-logo.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div><div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC · All Rights Reserved</div></footer>
 </div>
 
 
@@ -1349,7 +1350,7 @@ function showMap(b){document.querySelectorAll('.chips .chip').forEach(function(c
   </div>
 
   <footer class="footer">
-    <div class="footer-logo"><img src="https://i.ibb.co/rK2xkhkh/Logo-website-transparent.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div>
+    <div class="footer-logo"><img src="assets/altimentum-logo.png" alt="AltiMentum Global" style="height:45px;width:auto;display:block;margin:0 auto;"></div>
     <div class="footer-copy" style="margin-top:1rem;padding-bottom:1rem;">© 2026 AltiMentum Global LLC · House of Dignity Division</div>
   </footer>
 </div>
